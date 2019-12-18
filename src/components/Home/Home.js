@@ -13,27 +13,29 @@ export default class Home extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
+        <Text style={styles.header}>TravelRx</Text>
         <TextInput 
           style={styles.input}
           placeholder='Enter Medication'
+          textAlign='center'
           onChangeText={(medName) => this.setState({ medName })}
           value={this.state.medName}
         />
         <TouchableOpacity 
-          style={styles.button}
+          style={styles.find}
         >
-          <Text>Find Generic Name</Text>
+          <Text style={styles.text}>Find Generic Name</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigate('Login')}
         >
-          <Text>Login</Text>
+          <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
         >
-          <Text>Create Account</Text>
+          <Text style={styles.text}>Create Account</Text>
         </TouchableOpacity>
       </View>
     );
@@ -45,21 +47,46 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+  },
+  header: {
+    color: '#3499AA',
+    fontSize: 40
   },
   input: {
-
+    borderColor: 'grey',
+    height: 50,
+    width: 250,
+    fontSize: 15,
+    borderRadius: 12,
+    borderWidth: 1
+  },
+  text: {
+    color: '#EBEBEB',
+    textAlign: 'center',
+    fontSize: 18
+  },
+  find: {
+    backgroundColor: '#3499AA',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    padding: 12,
+    width: 250
   },
   button: {
     backgroundColor: '#8BC5C5',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
-    color: 'white',
-    fontSize: 24,
+    display: 'flex',
     fontWeight: 'bold',
+    height: 45,
+    justifyContent: 'center',
     overflow: 'hidden',
-    padding: 12,
+    padding: 0,
     width: 250
   }
 });
