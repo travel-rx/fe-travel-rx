@@ -10,6 +10,7 @@ export default class Home extends Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <TextInput 
@@ -25,6 +26,7 @@ export default class Home extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
+          onPress={() => navigate('Login')}
         >
           <Text>Login</Text>
         </TouchableOpacity>
