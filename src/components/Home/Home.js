@@ -1,12 +1,41 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-export default function Home() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      medName: ''
+    }
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TextInput 
+          style={styles.input}
+          placeholder='Enter Medication'
+          onChangeText={(medName) => this.setState({ medName })}
+          value={this.state.medName}
+        />
+        <TouchableOpacity 
+          style={styles.button}
+        >
+          <Text>Find Generic Name</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+        >
+          <Text>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+        >
+          <Text>Create Account</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -16,4 +45,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+
+  },
+  button: {
+    backgroundColor: '#8BC5C5',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    padding: 12,
+    width: 250
+  }
 });
