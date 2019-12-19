@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import Footer from '../Footer/Footer';
 
 export default class Home extends Component {
   constructor() {
@@ -37,6 +38,7 @@ export default class Home extends Component {
         >
           <Text style={styles.text}>Create Account</Text>
         </TouchableOpacity>
+        <Footer />
       </View>
     );
   }
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   header: {
     color: '#3499AA',
