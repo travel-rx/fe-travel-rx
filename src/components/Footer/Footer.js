@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
-export default function Footer() {
+export default class Footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    }
 
-  return (
-    <View style={styles.container}>
+  }
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View style={styles.container}>
       <TouchableOpacity
         style={styles.icon}
-      >
+        onPress={() => navigate('Home')}
+        >
         <AntDesign name='home' size={45} color='#EBEBEB' />
+        <Text>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity>
         <AntDesign name='medicinebox' size={45} color='#EBEBEB' />
@@ -22,6 +32,7 @@ export default function Footer() {
       </TouchableOpacity>
     </View>
   )
+}
 };
 
 const styles = StyleSheet.create({

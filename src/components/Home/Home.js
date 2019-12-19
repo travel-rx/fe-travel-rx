@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      medName: ''
+      medName: '',
+      genericName: ''
     }
   }
 
@@ -27,6 +29,7 @@ export default class Home extends Component {
         >
           <Text style={styles.text}>Find Generic Name</Text>
         </TouchableOpacity>
+        <Text style={styles.generic}>{this.state.genericName}</Text>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigate('Login')}
@@ -38,7 +41,6 @@ export default class Home extends Component {
         >
           <Text style={styles.text}>Create Account</Text>
         </TouchableOpacity>
-        <Footer />
       </View>
     );
   }
@@ -90,5 +92,10 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     padding: 0,
     width: 250
+  },
+  generic: {
+    fontSize: 20,
+    color: '#2E3637',
+    marginBottom: 20
   }
 });
