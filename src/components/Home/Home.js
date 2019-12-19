@@ -11,12 +11,19 @@ export default class Home extends Component {
       genericName: ''
     }
   }
+  static navigationOptions = {
+    title: 'TravelRx',
+    headerStyle: {
+      backgroundColor: '#3499AA'
+    },
+    headerTintColor: '#EBEBEB',
+
+  }
 
   render() {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>TravelRx</Text>
         <TextInput 
           style={styles.input}
           placeholder='Enter Medication'
@@ -52,11 +59,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  header: {
-    color: '#3499AA',
-    fontSize: 40
+    justifyContent: 'space-between', 
+    paddingTop: 50
   },
   input: {
     borderColor: 'grey',

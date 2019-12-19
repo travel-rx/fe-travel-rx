@@ -10,6 +10,14 @@ export default class Login extends Component {
       password: ''
     }
   }
+  static navigationOptions = {
+    title: 'TravelRx',
+    headerStyle: {
+      backgroundColor: '#3499AA'
+    },
+    headerTintColor: '#EBEBEB',
+
+  }
 
   render() {
     const { navigation } = this.props
