@@ -13,7 +13,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.header}>TravelRx</Text>
@@ -32,7 +32,7 @@ export default class Home extends Component {
         <Text style={styles.generic}>{this.state.genericName}</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigate('Login')}
+          onPress={() => navigation.navigate('Login')}
         >
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
@@ -41,6 +41,7 @@ export default class Home extends Component {
         >
           <Text style={styles.text}>Create Account</Text>
         </TouchableOpacity>
+        <Footer navigation={navigation}/>
       </View>
     );
   }

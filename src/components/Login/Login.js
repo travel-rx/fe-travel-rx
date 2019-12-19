@@ -12,7 +12,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const { navigate } = this.props.navigation
+    const { navigation } = this.props
     return(
       <View style={styles.container}>
         <View style={styles.login}>
@@ -37,6 +37,7 @@ export default class Login extends Component {
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
         </View>
+        <Footer navigation={navigation}/>
       </View>
     )
   }

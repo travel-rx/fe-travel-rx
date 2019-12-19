@@ -3,13 +3,7 @@ import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
 export default class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    }
-
-  }
+  
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -19,7 +13,6 @@ export default class Footer extends Component {
         onPress={() => navigate('Home')}
         >
         <AntDesign name='home' size={45} color='#EBEBEB' />
-        <Text>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity>
         <AntDesign name='medicinebox' size={45} color='#EBEBEB' />
