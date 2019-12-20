@@ -4,8 +4,9 @@ import Footer from '../Footer/Footer';
 
 export default class CreateAccount extends Component {
   render() {
-    const { navigation } = this.props
-    return(
+    const { navigation } = this.props;
+
+    return (
       <View style={styles.container}>
         <Text>Create Account</Text>
         <Footer navigation={navigation}/>
