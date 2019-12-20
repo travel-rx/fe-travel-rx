@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 
 export default class Trips extends Component {
   render() {
-    const navigation = this.props;
+    const { navigation } = this.props;
 
     return (
       <View style={styles.container}>
