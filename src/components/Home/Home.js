@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 
 export default class Home extends Component {
   constructor() {
@@ -45,6 +44,7 @@ export default class Home extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
+          onPress={() => navigation.navigate('CreateAccount')}
         >
           <Text style={styles.text}>Create Account</Text>
         </TouchableOpacity>

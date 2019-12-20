@@ -14,13 +14,19 @@ export default class Footer extends Component {
         >
         <AntDesign name='home' size={45} color='#EBEBEB' />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigate('MedicineCabinet')}
+      >
         <AntDesign name='medicinebox' size={45} color='#EBEBEB' />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigate('Trips')}
+      >
         <FontAwesome name='plane' size={45} color='#EBEBEB' />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigate('About')}
+      >
         <AntDesign name='questioncircleo' size={45} color='#EBEBEB' />
       </TouchableOpacity>
     </View>
