@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      medName: ''
+      medName: '',
+      genericName: ''
     }
+  }
+  static navigationOptions = {
+    title: 'TravelRx',
+    headerStyle: {
+      backgroundColor: '#3499AA'
+    },
+    headerTintColor: '#EBEBEB',
+
   }
 
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>TravelRx</Text>
         <TextInput 
           style={styles.input}
           placeholder='Enter Medication'
@@ -26,9 +36,10 @@ export default class Home extends Component {
         >
           <Text style={styles.text}>Find Generic Name</Text>
         </TouchableOpacity>
+        <Text style={styles.generic}>{this.state.genericName}</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigate('Login')}
+          onPress={() => navigation.navigate('Login')}
         >
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
@@ -37,6 +48,7 @@ export default class Home extends Component {
         >
           <Text style={styles.text}>Create Account</Text>
         </TouchableOpacity>
+        <Footer navigation={navigation}/>
       </View>
     );
   }
@@ -47,11 +59,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  header: {
-    color: '#3499AA',
-    fontSize: 40
+    justifyContent: 'space-between', 
+    paddingTop: 50
   },
   input: {
     borderColor: 'grey',
@@ -88,5 +97,10 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     padding: 0,
     width: 250
+  },
+  generic: {
+    fontSize: 20,
+    color: '#2E3637',
+    marginBottom: 20
   }
 });
