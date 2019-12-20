@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import Footer from '../Footer/Footer';
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       email: '',
       password: ''
