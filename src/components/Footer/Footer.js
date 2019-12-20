@@ -24,7 +24,9 @@ export default class Footer extends Component {
       >
         <FontAwesome name='plane' size={45} color='#EBEBEB' />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigate('About')}
+      >
         <AntDesign name='questioncircleo' size={45} color='#EBEBEB' />
       </TouchableOpacity>
     </View>
