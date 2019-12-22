@@ -7,6 +7,7 @@ export default class MedicineCabinet extends Component {
   
   static navigationOptions = {
     title: 'Medicine Cabinet',
+    headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
     },

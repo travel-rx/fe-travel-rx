@@ -7,6 +7,7 @@ export default class Trips extends Component {
 
   static navigationOptions = {
     title: 'Trips',
+    headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
     },
