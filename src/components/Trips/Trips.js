@@ -1,14 +1,55 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Footer from '../Footer/Footer';
+import { Ionicons } from '@expo/vector-icons'
 
 export default class Trips extends Component {
+
+  static navigationOptions = {
+    title: 'Trips',
+    headerStyle: {
+      backgroundColor: '#3499AA'
+    },
+    headerTintColor: '#EBEBEB',
+    headerTitleStyle: {
+      fontSize: 30,
+    },
+  };
+
   render() {
     const { navigation } = this.props;
 
     return (
       <View style={styles.container}>
-        <Text>Trips</Text>
+                <View style={styles.tripsContainer}>
+          <View style={styles.trip}>
+            <Ionicons
+              color='#3499AA'
+              name='md-globe'
+              size={65}
+              />
+              <View>
+                <Text style={styles.tripName}>Phenergan</Text>
+                <Text style={styles.tripDestination}>Promethazine</Text>
+              </View>
+          </View>
+          <View style={styles.trip}>
+            <Ionicons
+              color='#3499AA'
+              name='md-globe'
+              size={65}
+              />
+              <View>
+                <Text style={styles.tripName}>Vibramycin</Text>
+                <Text style={styles.tripDestination}>Doxycycline</Text>
+              </View>
+          </View>
+        </View>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>
+            Add Trip
+          </Text>
+        </TouchableOpacity>
         <Footer navigation={navigation}/>
       </View>
     )
@@ -21,18 +62,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  text: {
+  heading: {
+    color: '#3499AA',
+    fontSize: 40,
+    paddingTop: 20,
+
+  },
+  buttonText: {
     color: '#EBEBEB',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  input: {
-    borderColor: 'grey',
-    height: 50,
-    width: 250,
+  tripsContainer: {
+    flex: 1,
+    margin: 25
+  },
+  trip: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  tripName: {
+    color: '#3499AA',
+    fontSize: 35,
+    fontWeight: 'bold'
+  },
+  tripDestination: {
     fontSize: 15,
-    borderRadius: 12,
-    borderWidth: 1
   },
   button: {
     backgroundColor: '#8BC5C5',
@@ -46,11 +102,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     padding: 0,
     width: 250,
-    marginTop: 50
+    marginBottom: 25
   },
-  login: {
-    height: 400,
-    flex: 0,
-    justifyContent: 'space-evenly'
-  }
-})
+});

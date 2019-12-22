@@ -105,9 +105,4 @@ const styles = StyleSheet.create({
     width: 250,
     marginBottom: 25
   },
-  login: {
-    height: 400,
-    flex: 0,
-    justifyContent: 'space-evenly'
-  }
-})
+});
