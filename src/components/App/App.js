@@ -7,8 +7,7 @@ export default class App extends Component {
     const { navigation } = this.props;
     return (
       <>
-      
-      <AppNavigator />
+        <AppNavigator />
       </>
     )
   }

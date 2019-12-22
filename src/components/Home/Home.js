@@ -9,15 +9,18 @@ export default class Home extends Component {
       medName: '',
       genericName: ''
     }
-  }
+  };
+
   static navigationOptions = {
     title: 'TravelRx',
     headerStyle: {
       backgroundColor: '#3499AA'
     },
     headerTintColor: '#EBEBEB',
-
-  }
+    headerTitleStyle: {
+      fontSize: 30,
+    },
+  };
 
   render() {
     const { navigation } = this.props;
@@ -30,9 +33,7 @@ export default class Home extends Component {
           onChangeText={(medName) => this.setState({ medName })}
           value={this.state.medName}
         />
-        <TouchableOpacity 
-          style={styles.find}
-        >
+        <TouchableOpacity style={styles.find}>
           <Text style={styles.text}>Find Generic Name</Text>
         </TouchableOpacity>
         <Text style={styles.generic}>{this.state.genericName}</Text>
@@ -94,9 +95,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     height: 45,
     justifyContent: 'center',
+    margin: 0,
     overflow: 'hidden',
     padding: 0,
-    width: 250
+    width: 250,
   },
   generic: {
     fontSize: 20,
