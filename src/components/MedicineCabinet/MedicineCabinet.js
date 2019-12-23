@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   genericName: {
+    color: '#212B31',
     fontSize: 15,
   },
   button: {

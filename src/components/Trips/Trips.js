@@ -30,8 +30,8 @@ export default class Trips extends Component {
               size={65}
               />
               <View>
-                <Text style={styles.tripName}>Phenergan</Text>
-                <Text style={styles.tripDestination}>Promethazine</Text>
+                <Text style={styles.tripName}>Meet Itzy!</Text>
+                <Text style={styles.tripDestination}>St. Petersbug, FL</Text>
               </View>
           </View>
           <View style={styles.trip}>
@@ -41,8 +41,8 @@ export default class Trips extends Component {
               size={65}
               />
               <View>
-                <Text style={styles.tripName}>Vibramycin</Text>
-                <Text style={styles.tripDestination}>Doxycycline</Text>
+                <Text style={styles.tripName}>Backpacking Trip</Text>
+                <Text style={styles.tripDestination}>Ho Chi Minh, Vietnam</Text>
               </View>
           </View>
         </View>
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   tripDestination: {
+    color: '#212B31',
     fontSize: 15,
   },
   button: {
