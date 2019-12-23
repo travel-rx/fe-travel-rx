@@ -6,6 +6,7 @@ import CreateAccount from '../components/CreateAccount/CreateAccount';
 import Trips from '../components/Trips/Trips';
 import MedicineCabinet from '../components/MedicineCabinet/MedicineCabinet';
 import About from '../components/About/About';
+import AddMed from '../components/AddMed/AddMed';
 
 const AppNavigator = createStackNavigator({
   Home: { screen: Home },
@@ -13,7 +14,8 @@ const AppNavigator = createStackNavigator({
   CreateAccount: { screen: CreateAccount },
   Trips: { screen: Trips },
   MedicineCabinet: { screen: MedicineCabinet },
-  About: { screen: About }
+  About: { screen: About },
+  AddMed: { screen: AddMed }
 });
 
 export default createAppContainer(AppNavigator);

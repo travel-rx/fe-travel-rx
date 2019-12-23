@@ -28,7 +28,6 @@ export default class Login extends Component {
     return(
       <View style={styles.container}>
         <View style={styles.login}>
-
         <TextInput 
           style={styles.input}
           placeholder='Email'

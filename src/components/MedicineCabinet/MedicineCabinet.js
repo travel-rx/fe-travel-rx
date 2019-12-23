@@ -47,7 +47,10 @@ export default class MedicineCabinet extends Component {
               </View>
           </View>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate('AddMed')}
+        >
           <Text style={styles.buttonText}>
             Add Medication
           </Text>
