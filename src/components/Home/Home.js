@@ -64,12 +64,12 @@ const styles = StyleSheet.create({
     paddingTop: 50
   },
   input: {
-    borderColor: 'grey',
+    borderColor: '#D7D7D7',
     height: 50,
     width: 250,
     fontSize: 15,
     borderRadius: 12,
-    borderWidth: 1
+    borderWidth: 2
   },
   text: {
     color: '#EBEBEB',
