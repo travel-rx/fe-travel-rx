@@ -3,16 +3,78 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import Footer from '../Footer/Footer';
 
 export default class CreateAccount extends Component {
-  render() {
-    const { navigation } = this.props;
+  constructor() {
+    super();
+    this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      passwordReEntered: ''
+    }
+  }
 
-    return (
+  static navigationOptions = {
+    title: 'Create Account',
+    headerLeft: null,
+    headerStyle: {
+      backgroundColor: '#3499AA'
+    },
+    headerTintColor: '#EBEBEB',
+    headerTitleStyle: {
+      fontSize: 30,
+    },
+  };
+
+  render() {
+    const { navigation } = this.props
+    return(
       <View style={styles.container}>
-        <Text>Create Account</Text>
+        <View style={styles.createAccount}>
+        <TextInput
+          style={styles.input}
+          placeholder='First Name'
+          textAlign='center'
+          onChangeText={(firstName) => this.setState({ firstName })}
+          value={this.state.firstName}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder='Last Name'
+          textAlign='center'
+          onChangeText={(lastName) => this.setState({ lastName })}
+          value={this.state.lastName}
+        />
+        <TextInput 
+          style={styles.input}
+          placeholder='Email'
+          textAlign='center'
+          onChangeText={(email) => this.setState({ email })}
+          value={this.state.email}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder='Password'
+          textAlign='center'
+          onChangeText={(password) => this.setState({ password })}
+          value={this.state.password}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder='Re-Enter Password'
+          textAlign='center'
+          onChangeText={(passwordReEntered) => this.setState({ passwordReEntered })}
+          value={this.state.passwordReEntered}
+        />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>Create Account</Text>
+        </TouchableOpacity>
+        </View>
         <Footer navigation={navigation}/>
       </View>
     )
   }
+
 }
 
 const styles = StyleSheet.create({
@@ -27,15 +89,16 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   input: {
-    borderColor: 'grey',
-    height: 50,
-    width: 250,
-    fontSize: 15,
+    borderColor: '#D7D7D7',
     borderRadius: 12,
-    borderWidth: 1
+    borderWidth: 2,
+    height: 50,
+    fontSize: 15,
+    marginTop: 40,
+    width: 250,
   },
   button: {
-    backgroundColor: '#8BC5C5',
+    backgroundColor: '#3499AA',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
@@ -48,9 +111,9 @@ const styles = StyleSheet.create({
     width: 250,
     marginTop: 50
   },
-  login: {
+  createAccount: {
     height: 400,
     flex: 0,
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-between'
   }
-})
+});

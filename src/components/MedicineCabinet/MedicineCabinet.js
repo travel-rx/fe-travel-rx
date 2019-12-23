@@ -1,15 +1,61 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Footer from '../Footer/Footer';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default class MedicineCabinet extends Component {
+  
+  static navigationOptions = {
+    title: 'Medicine Cabinet',
+    headerLeft: null,
+    headerStyle: {
+      backgroundColor: '#3499AA'
+    },
+    headerTintColor: '#EBEBEB',
+    headerTitleStyle: {
+      fontSize: 30,
+    },
+  };
+  
   render() {
     const { navigation } = this.props;
     
     return (
       <View style={styles.container}>
-        <Text>MedicineCabinet</Text>
-        <Footer navigation={navigation}/>
+        {/* <Text style={styles.heading}>Medicine Cabinet</Text> */}
+        <View style={styles.medContainer}>
+          <View style={styles.medicine}>
+            <MaterialCommunityIcons
+              color='#3499AA'
+              name='pill'
+              size={65}
+              />
+              <View>
+                <Text style={styles.name}>Phenergan</Text>
+                <Text style={styles.genericName}>Promethazine</Text>
+              </View>
+          </View>
+          <View style={styles.medicine}>
+            <MaterialCommunityIcons
+              color='#3499AA'
+              name='pill'
+              size={65}
+              />
+              <View>
+                <Text style={styles.name}>Vibramycin</Text>
+                <Text style={styles.genericName}>Doxycycline</Text>
+              </View>
+          </View>
+        </View>
+        <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate('AddMed')}
+        >
+          <Text style={styles.buttonText}>
+            Add Medication
+          </Text>
+        </TouchableOpacity>
+        <Footer navigation={navigation}/>      
       </View>
     )
   }
@@ -21,21 +67,37 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  text: {
+  heading: {
+    color: '#3499AA',
+    fontSize: 40,
+    paddingTop: 20,
+
+  },
+  buttonText: {
     color: '#EBEBEB',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  input: {
-    borderColor: 'grey',
-    height: 50,
-    width: 250,
+  medContainer: {
+    flex: 1,
+    margin: 25
+  },
+  medicine: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  name: {
+    color: '#3499AA',
+    fontSize: 35,
+    fontWeight: 'bold'
+  },
+  genericName: {
+    color: '#212B31',
     fontSize: 15,
-    borderRadius: 12,
-    borderWidth: 1
   },
   button: {
-    backgroundColor: '#8BC5C5',
+    backgroundColor: '#3499AA',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
@@ -46,11 +108,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     padding: 0,
     width: 250,
-    marginTop: 50
+    marginBottom: 25
   },
-  login: {
-    height: 400,
-    flex: 0,
-    justifyContent: 'space-evenly'
-  }
-})
+});
