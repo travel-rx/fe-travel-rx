@@ -10,14 +10,18 @@ export default class Login extends Component {
       password: ''
     }
   }
+
   static navigationOptions = {
-    title: 'TravelRx',
+    title: 'Login',
+    headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
     },
     headerTintColor: '#EBEBEB',
-
-  }
+    headerTitleStyle: {
+      fontSize: 30,
+    },
+  };
 
   render() {
     const { navigation } = this.props
@@ -39,9 +43,7 @@ export default class Login extends Component {
           onChangeText={(password) => this.setState({ password })}
           value={this.state.password}
           />
-        <TouchableOpacity
-          style={styles.button}
-          >
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
         </View>
@@ -64,15 +66,15 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   input: {
-    borderColor: 'grey',
+    borderColor: '#D7D7D7',
     height: 50,
     width: 250,
     fontSize: 15,
     borderRadius: 12,
-    borderWidth: 1
+    borderWidth: 2
   },
   button: {
-    backgroundColor: '#8BC5C5',
+    backgroundColor: '#3499AA',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
@@ -90,4 +92,4 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'space-evenly'
   }
-})
+});

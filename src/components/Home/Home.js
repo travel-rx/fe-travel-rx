@@ -34,7 +34,7 @@ export default class Home extends Component {
           value={this.state.medName}
         />
         <TouchableOpacity style={styles.find}>
-          <Text style={styles.text}>Find Generic Name</Text>
+          <Text style={styles.findText}>Find Generic Name</Text>
         </TouchableOpacity>
         <Text style={styles.generic}>{this.state.genericName}</Text>
         <TouchableOpacity
@@ -73,21 +73,26 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#EBEBEB',
+    fontSize: 18,
     textAlign: 'center',
-    fontSize: 18
   },
   find: {
-    backgroundColor: '#3499AA',
-    borderColor: 'white',
-    borderWidth: 1,
+    backgroundColor: '#FFF',
+    borderColor: '#3499AA',
+    borderWidth: 2,
     borderRadius: 12,
-    fontWeight: 'bold',
     overflow: 'hidden',
     padding: 12,
     width: 250
   },
+  findText: {
+    fontWeight: 'bold',
+    color: '#3499AA',
+    textAlign: 'center',
+    fontSize: 18
+  },
   button: {
-    backgroundColor: '#8BC5C5',
+    backgroundColor: '#3499AA',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,

@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   button: {
-    backgroundColor: '#8BC5C5',
+    backgroundColor: '#3499AA',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
