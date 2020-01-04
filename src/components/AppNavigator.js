@@ -7,6 +7,7 @@ import Trips from '../components/Trips/Trips';
 import MedicineCabinet from '../components/MedicineCabinet/MedicineCabinet';
 import About from '../components/About/About';
 import AddMed from '../components/AddMed/AddMed';
+import AddTrip from '../components/AddTrip/AddTrip';
 import FAQ from '../components/FAQ/FAQ';
 
 const AppNavigator = createStackNavigator({
@@ -17,6 +18,7 @@ const AppNavigator = createStackNavigator({
   MedicineCabinet: { screen: MedicineCabinet },
   About: { screen: About },
   AddMed: { screen: AddMed },
+  AddTrip: { screen: AddTrip},
   FAQ: { screen: FAQ }
 });
 

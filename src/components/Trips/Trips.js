@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList, TextInput, TouchableOpacity } from 'react-native';
 import Footer from '../Footer/Footer';
 import { Ionicons } from '@expo/vector-icons'
 
@@ -22,7 +22,7 @@ export default class Trips extends Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.tripsContainer}>
+        <ScrollView style={styles.tripsContainer}>
           <View style={styles.trip}>
             <Ionicons
               color='#3499AA'
@@ -45,8 +45,11 @@ export default class Trips extends Component {
                 <Text style={styles.tripDestination}>Ho Chi Minh, Vietnam</Text>
               </View>
           </View>
-        </View>
-        <TouchableOpacity style={styles.button}>
+        </ScrollView>
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={() => navigation.navigate('AddTrip')}
+        >
           <Text style={styles.buttonText}>
             Add Trip
           </Text>
@@ -76,12 +79,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   tripsContainer: {
-    flex: 1,
-    margin: 25
+    margin: 25,
+    marginHorizontal: 15
+
   },
   trip: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: 20
   },
   tripName: {
     color: '#3499AA',
@@ -93,7 +98,6 @@ const styles = StyleSheet.create({
     color: '#212B31',
     fontSize: 15,
     marginLeft: 20
-
   },
   button: {
     backgroundColor: '#3499AA',

@@ -21,6 +21,9 @@ export default class FAQ extends Component {
 
     return (
       <View style={styles.container}>
+        <ScrollView style={styles.faqContainer}>
+          
+        </ScrollView>
         <Footer navigation={navigation}/>
       </View>
     )
@@ -35,5 +38,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 50
   },
-
+  faqContainer: {
+    flex: 1,
+    margin: 25
+  }
 })

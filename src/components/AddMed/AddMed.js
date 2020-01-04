@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import Footer from '../Footer/Footer';
 
 
 export default class CreateAccount extends Component {
@@ -7,7 +8,7 @@ export default class CreateAccount extends Component {
     super();
     this.state = {
       name: '',
-      dosage: '',
+      dosage: null,
       frequency: 1,
     }
   }
@@ -24,6 +25,7 @@ export default class CreateAccount extends Component {
   };
 
   render() {
+    const { navigation } = this.props;
     return(
       <View style={styles.container}>
         <View style={styles.createAccount}>
@@ -45,7 +47,7 @@ export default class CreateAccount extends Component {
           style={styles.input}
           placeholder='Enter Frequency'
           textAlign='center'
-          keyboardType='numeric'
+          keyboardType={'numeric'}
           onChangeText={(frequency) => this.setState({ frequency })}
           value={this.state.frequency}
         />
@@ -53,12 +55,13 @@ export default class CreateAccount extends Component {
           style={styles.input}
           placeholder='Inventory'
           textAlign='center'
-          keyboardType='numeric'
+          keyboardType={'numeric'}
         />
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>Add to Medicine Cabinet</Text>
         </TouchableOpacity>
         </View>
+        <Footer navigation={navigation}/>
       </View>
     )
   }
@@ -82,8 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     fontSize: 15,
-    marginTop: 40,
-    width: 250,
+    width: 300,
   },
   button: {
     backgroundColor: '#3499AA',
@@ -96,12 +98,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     padding: 0,
-    width: 250,
-    marginTop: 50
+    width: 300,
   },
   createAccount: {
-    height: 400,
-    flex: 0,
-    justifyContent: 'space-between'
+    flex: 1,
+    justifyContent: 'space-around'
   }
 });
