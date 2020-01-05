@@ -22,13 +22,12 @@ export default class MedicineCabinet extends Component {
     
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.heading}>Medicine Cabinet</Text> */}
         <View style={styles.medContainer}>
           <View style={styles.medicine}>
             <MaterialCommunityIcons
               color='#3499AA'
               name='pill'
-              size={65}
+              size={60}
               />
               <View>
                 <Text style={styles.name}>Phenergan</Text>
@@ -39,7 +38,7 @@ export default class MedicineCabinet extends Component {
             <MaterialCommunityIcons
               color='#3499AA'
               name='pill'
-              size={65}
+              size={60}
               />
               <View>
                 <Text style={styles.name}>Vibramycin</Text>
@@ -48,8 +47,8 @@ export default class MedicineCabinet extends Component {
           </View>
         </View>
         <TouchableOpacity 
-        style={styles.button}
-        onPress={() => navigation.navigate('AddMed')}
+          style={styles.button}
+          onPress={() => navigation.navigate('AddMed')}
         >
           <Text style={styles.buttonText}>
             Add Medication
@@ -89,12 +88,14 @@ const styles = StyleSheet.create({
   },
   name: {
     color: '#3499AA',
-    fontSize: 35,
-    fontWeight: 'bold'
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginLeft: 20
   },
   genericName: {
     color: '#212B31',
     fontSize: 15,
+    marginLeft: 20
   },
   button: {
     backgroundColor: '#3499AA',

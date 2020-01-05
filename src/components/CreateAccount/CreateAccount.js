@@ -23,7 +23,7 @@ export default class CreateAccount extends Component {
     headerTintColor: '#EBEBEB',
     headerTitleStyle: {
       fontSize: 30,
-    },
+    }
   };
 
   render() {
@@ -114,6 +114,6 @@ const styles = StyleSheet.create({
   createAccount: {
     height: 400,
     flex: 0,
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
   }
 });
