@@ -5,6 +5,12 @@ import Footer from '../Footer/Footer';
 import { Ionicons } from '@expo/vector-icons'
 
 export default class EmergencyTranslations extends Component {
+  constructor() {
+    super();
+    this.state = {
+      language: 'spanish'
+    }
+  }
 
   static navigationOptions = {
     title: 'Emergency Translations',
@@ -20,17 +26,16 @@ export default class EmergencyTranslations extends Component {
 
   render() {
     const { navigation } = this.props;
-    const language = data['french']
-    console.log('what is DATA?', data.spanish)
+    const language = data[this.state.language]
 
     return (
       <View style={styles.container}>
         <Picker
-          // selectedValue={this.state.language}
-          style={{height: 50, width: 100}}
-          // onValueChange={(itemValue, itemIndex) =>
-          //   this.setState({language: itemValue})
-          // }
+          selectedValue={this.state.language}
+          style={{height: 50, width: 150}}
+          onValueChange={(itemValue, itemIndex) =>
+            this.setState({language: itemValue})
+          }
         >
           <Picker.Item label= "Spanish" value= 'spanish'/>
           <Picker.Item label= "French" value= 'french'/>
