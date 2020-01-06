@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView, FlatList, TextInput, TouchableOpaci
 import Footer from '../Footer/Footer';
 import { Ionicons } from '@expo/vector-icons'
 
-export default class Trips extends Component {
+export default class EmergencyTranslations extends Component {
 
   static navigationOptions = {
     title: 'Trips',
