@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, FlatList, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList, TextInput, TouchableOpacity, Picker } from 'react-native';
 import data from './data'
 import Footer from '../Footer/Footer';
 import { Ionicons } from '@expo/vector-icons'
@@ -25,6 +25,16 @@ export default class EmergencyTranslations extends Component {
 
     return (
       <View style={styles.container}>
+        <Picker
+          // selectedValue={this.state.language}
+          style={{height: 50, width: 100}}
+          // onValueChange={(itemValue, itemIndex) =>
+          //   this.setState({language: itemValue})
+          // }
+        >
+          <Picker.Item label= "Spanish" value= 'spanish'/>
+          <Picker.Item label= "French" value= 'french'/>
+        </Picker>
         <ScrollView style={styles.translationContainer}>
           <Text>Help</Text>
           <Text>{language.help}</Text>
@@ -61,7 +71,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   translationContainer: {
-    margin: 25,
+    marginTop: 125,
     marginHorizontal: 15
   },
   trip: {
