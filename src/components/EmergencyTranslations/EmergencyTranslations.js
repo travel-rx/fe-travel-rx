@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 export default class EmergencyTranslations extends Component {
 
   static navigationOptions = {
-    title: 'Trips',
+    title: 'Emergency Translations',
     headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
@@ -23,37 +23,7 @@ export default class EmergencyTranslations extends Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.tripsContainer}>
-          <View style={styles.trip}>
-            <Ionicons
-              color='#3499AA'
-              name='md-globe'
-              size={60}
-              />
-              <View>
-                <Text style={styles.tripName}>Meet Itzy!</Text>
-                <Text style={styles.tripDestination}>St. Petersbug, FL</Text>
-              </View>
-          </View>
-          <View style={styles.trip}>
-            <Ionicons
-              color='#3499AA'
-              name='md-globe'
-              size={60}
-              />
-              <View>
-                <Text style={styles.tripName}>Backpacking Trip</Text>
-                <Text style={styles.tripDestination}>Ho Chi Minh, Vietnam</Text>
-              </View>
-          </View>
         </ScrollView>
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={() => navigation.navigate('AddTrip')}
-        >
-          <Text style={styles.buttonText}>
-            Add Trip
-          </Text>
-        </TouchableOpacity>
         <Footer navigation={navigation}/>
       </View>
     )
