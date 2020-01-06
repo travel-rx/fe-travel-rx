@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Footer from '../Footer/Footer';
+import { getDrug } from '../../utils/apiCalls';
 
 export default class Home extends Component {
   constructor() {
@@ -22,6 +23,16 @@ export default class Home extends Component {
     },
   };
 
+  getGeneric = async () => {
+    const { medName } = this.state 
+    try {
+      const genericName = await getDrug(medName)
+      this.setState({ genericName })
+    } catch ({ error }){
+
+    }
+  }
+
   render() {
     const { navigation } = this.props;
     return (
@@ -33,7 +44,10 @@ export default class Home extends Component {
           onChangeText={(medName) => this.setState({ medName })}
           value={this.state.medName}
         />
-        <TouchableOpacity style={styles.find}>
+        <TouchableOpacity 
+          style={styles.find}
+          onPress={() => this.getGeneric()}
+        >
           <Text style={styles.findText}>Find Generic Name</Text>
         </TouchableOpacity>
         <Text style={styles.generic}>{this.state.genericName}</Text>
