@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug } from '../../utils/apiCalls';
 
-export default class Home extends Component {
+export class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +25,7 @@ export default class Home extends Component {
   };
 
   getGeneric = async () => {
-    const { medName } = this.state 
+    const { medName, user } = this.state 
     try {
       const genericName = await getDrug(medName)
       this.setState({ genericName })
@@ -68,6 +69,13 @@ export default class Home extends Component {
     );
   }
 }
+
+export const mapStateToProps = ({ user }) => ({
+  user
+})
+
+
+export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
   container: {
