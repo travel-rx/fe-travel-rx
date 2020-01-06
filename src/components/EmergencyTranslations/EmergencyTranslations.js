@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, FlatList, TextInput, TouchableOpacity, Picker } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Picker } from 'react-native';
 import data from './data'
 import Footer from '../Footer/Footer';
-import { Ionicons } from '@expo/vector-icons'
 
 export default class EmergencyTranslations extends Component {
   constructor() {
@@ -39,6 +38,7 @@ export default class EmergencyTranslations extends Component {
         >
           <Picker.Item label= "Spanish" value= 'spanish'/>
           <Picker.Item label= "French" value= 'french'/>
+          <Picker.Item label= "German" value= 'german'/>
         </Picker>
         <ScrollView style={styles.translationContainer}>
           <Text>Help</Text>
