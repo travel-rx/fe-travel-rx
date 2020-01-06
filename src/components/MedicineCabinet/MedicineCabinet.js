@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default class MedicineCabinet extends Component {
+export class MedicineCabinet extends Component {
   
   static navigationOptions = {
     title: 'Medicine Cabinet',
@@ -18,12 +19,13 @@ export default class MedicineCabinet extends Component {
   };
   
   render() {
-    const { navigation } = this.props;
-    
+    const { navigation, user } = this.props;
+
     return (
       <View style={styles.container}>
         <View style={styles.medContainer}>
-          <View style={styles.medicine}>
+          {user === null && <Text>Please sign in or create an account to view Medicine Cabinet</Text>}
+          {user != null && <View style={styles.medicine}>
             <MaterialCommunityIcons
               color='#3499AA'
               name='pill'
@@ -33,7 +35,7 @@ export default class MedicineCabinet extends Component {
                 <Text style={styles.name}>Phenergan</Text>
                 <Text style={styles.genericName}>Promethazine</Text>
               </View>
-          </View>
+          </View>}
           <View style={styles.medicine}>
             <MaterialCommunityIcons
               color='#3499AA'
@@ -59,6 +61,13 @@ export default class MedicineCabinet extends Component {
     )
   }
 }
+
+export const mapStateToProps = ({ user }) => ({
+  user
+})
+
+
+export default connect(mapStateToProps)(MedicineCabinet);
 
 const styles = StyleSheet.create({
   container: {
