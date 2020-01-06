@@ -25,17 +25,17 @@ export class Home extends Component {
   };
 
   getGeneric = async () => {
-    const { medName, user } = this.state 
+    const { medName } = this.state 
+
     try {
       const genericName = await getDrug(medName)
       this.setState({ genericName })
     } catch ({ error }){
-
     }
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, user } = this.props;
     return (
       <View style={styles.container}>
         <TextInput 
@@ -52,18 +52,21 @@ export class Home extends Component {
           <Text style={styles.findText}>Find Generic Name</Text>
         </TouchableOpacity>
         <Text style={styles.generic}>{this.state.genericName}</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Login')}
-        >
-          <Text style={styles.text}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('CreateAccount')}
-        >
-          <Text style={styles.text}>Create Account</Text>
-        </TouchableOpacity>
+        {user === null && 
+          <View> 
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('Login')}
+            >
+              <Text style={styles.text}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('CreateAccount')}
+            >
+              <Text style={styles.text}>Create Account</Text>
+            </TouchableOpacity>
+          </View>}
         <Footer navigation={navigation}/>
       </View>
     );
