@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, FlatList, TextInput, TouchableOpacity } from 'react-native';
+import data from './data'
 import Footer from '../Footer/Footer';
 import { Ionicons } from '@expo/vector-icons'
 
@@ -19,10 +20,12 @@ export default class EmergencyTranslations extends Component {
 
   render() {
     const { navigation } = this.props;
+    console.log('what is DATA?', data.spanish)
 
     return (
       <View style={styles.container}>
         <ScrollView style={styles.tripsContainer}>
+          <Text>test</Text>
         </ScrollView>
         <Footer navigation={navigation}/>
       </View>
