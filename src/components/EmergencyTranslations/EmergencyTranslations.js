@@ -79,9 +79,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   translationContainer: {
-    marginTop: 50,
     backgroundColor: '#fff',
-    marginHorizontal: 15,
+    borderTopColor: '#3499AA',
+    borderTopWidth: 2,
+    marginTop: height * .07,
     width: width * .9,
     zIndex: 1
   },
@@ -93,11 +94,11 @@ const styles = StyleSheet.create({
     width: 150
   },
   translation: {
-    marginBottom: height * .05
+    marginTop: height * .05
   },
   english: {
     color: '#000',
-    fontSize: height * .04
+    fontSize: height * .025
   },
   translatedLanguage: {
     color: '#3499AA',
