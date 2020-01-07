@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-between', 
-    paddingTop: 50
+    paddingTop: height * .06
   },
   input: {
     borderColor: '#D7D7D7',
@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 2,
     width: width * .85,
-    paddingLeft: 20
   },
   text: {
     color: '#EBEBEB',
@@ -138,7 +137,7 @@ const styles = StyleSheet.create({
   generic: {
     fontSize: 25,
     color: '#3499AA',
-    marginBottom: 20,
+    marginBottom: height * .05,
     textAlign: 'center'
   }
 });
