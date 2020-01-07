@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
+import { connect } from 'react-redux';
+import { getMeds, postMed } from '../../utils/apiCalls';
+import { setMeds } from '../../actions';
+
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
-export default class AddMed extends Component {
+export class AddMed extends Component {
   constructor() {
     super();
     this.state = {
@@ -13,7 +17,17 @@ export default class AddMed extends Component {
       dosage: '',
       frequency: 1,
       withFood: false,
-      inventory: 0
+      error: ''
+    }
+  }
+
+  addMedication = async (med) => {
+    const { setMeds } = this.props;
+    try {
+      const meds = await postMed(this.state);
+      await setMeds(meds);
+    } catch ({ error }) {
+      this.setState({ error })
     }
   }
 
@@ -68,7 +82,10 @@ export default class AddMed extends Component {
               <Picker.Item label='Take WITH food' value={false}/>
               <Picker.Item label='Take WITHOUT food' value={true}/>
             </Picker>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={this.addMedication}
+            >
               <Text style={styles.text}>Save</Text>
             </TouchableOpacity>
           </View>
@@ -78,6 +95,12 @@ export default class AddMed extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  setMeds: meds => dispatch(setMeds(meds))
+})
+
+export default connect(null, mapDispatchToProps)(AddMed);
 
 const styles = StyleSheet.create({
   container: {

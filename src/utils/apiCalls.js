@@ -38,7 +38,9 @@ export const postMed = async (med) => {
   // const addedMeds = await response.json();
 
   let addedMeds = data.meds.push(med)
-  return addedMeds;
+  console.log('added in api', addedMeds)
+  // return addedMeds;
+  return this.getMeds()
 }
 
 
