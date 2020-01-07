@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
 
+const { height, width } = Dimensions.get('screen');
 
-export default class CreateAccount extends Component {
+export default class AddMed extends Component {
   constructor() {
     super();
     this.state = {
       name: '',
-      dosage: null,
+      dosage: '',
       frequency: 1,
+      withFood: false,
+      inventory: null
     }
   }
 
   static navigationOptions = {
     title: 'Add Medication',
+    headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
     },
     headerTintColor: '#EBEBEB',
     headerTitleStyle: {
-      fontSize: 30,
+      fontSize: height * 0.05,
     },
   };
 
@@ -28,27 +32,27 @@ export default class CreateAccount extends Component {
     const { navigation } = this.props;
     return(
       <View style={styles.container}>
-        <View style={styles.createAccount}>
+        <View style={styles.addMed}>
         <TextInput
           style={styles.input}
-          placeholder='Enter Medication name'
+          placeholder='Medication name'
           textAlign='center'
           onChangeText={(name) => this.setState({ name })}
           value={this.state.name}
         />
         <TextInput
           style={styles.input}
-          placeholder='Enter Dosage'
+          placeholder='Dosage'
           textAlign='center'
           onChangeText={(dosage) => this.setState({ dosage })}
           value={this.state.dosage}
         />
         <TextInput 
           style={styles.input}
-          placeholder='Enter Frequency'
+          placeholder='Times taken per day'
           textAlign='center'
           keyboardType={'numeric'}
-          onChangeText={(frequency) => this.setState({ frequency })}
+          onChange={(frequency) => this.setState({ frequency })}
           value={this.state.frequency}
         />
         <TextInput 
@@ -56,16 +60,25 @@ export default class CreateAccount extends Component {
           placeholder='Inventory'
           textAlign='center'
           keyboardType={'numeric'}
+          onChange={(inventory) => this.setState({ inventory })}
+          value={this.state.inventory}
         />
+        <Picker
+          selectedValue={this.state.withFood}
+          style={styles.picker}
+          onValueChange={(itemValue) =>   this.setState({ withFood: itemValue})}
+          >
+          <Picker.Item label='Take WITH food' value={false}/>
+          <Picker.Item label='Take WITHOUT food' value={true}/>
+        </Picker>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>Add to Medicine Cabinet</Text>
+          <Text style={styles.text}>Save</Text>
         </TouchableOpacity>
         </View>
         <Footer navigation={navigation}/>
       </View>
     )
   }
-
 }
 
 const styles = StyleSheet.create({
@@ -77,7 +90,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#EBEBEB',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: height * 0.04
   },
   input: {
     borderColor: '#D7D7D7',
@@ -85,7 +98,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     fontSize: 15,
-    width: 300,
+    width: width * 0.85,
   },
   button: {
     backgroundColor: '#3499AA',
@@ -98,10 +111,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     padding: 0,
-    width: 300,
+    width: width * 0.85,
   },
-  createAccount: {
+  addMed: {
     flex: 1,
     justifyContent: 'space-around'
+  },
+  picker: {
+    flex: 0,
+    justifyContent: 'space-around',
+    height: 75,
   }
 });

@@ -1,18 +1,22 @@
 const data = {
   meds: [
     {
-      name : 'Phenergan',
-      genericName : 'Promethazine',
-      withFood : false,
-      frequency : 3,
-      dose : '25mg'
+      id: 1,
+      name: 'Phenergan',
+      genericName: 'Promethazine',
+      withFood: false,
+      frequency: 3,
+      dosage: '25mg',
+      inventory: 20
     },
     {
-      name : 'Vibramycin',
-      genericName : 'Doxycycline',
-      withFood : true,
-      frequency : 1,
-      dose : '200mg'
+      id: 2,
+      name: 'Vibramycin',
+      genericName: 'Doxycycline',
+      withFood: true,
+      frequency: 1,
+      dosage: '200mg',
+      inventory: 50
     }
   ]
 }
