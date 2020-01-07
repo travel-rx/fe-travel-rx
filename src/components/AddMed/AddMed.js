@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
 
+const { height, width } = Dimensions.get('screen');
 
-export default class CreateAccount extends Component {
+export default class AddMed extends Component {
   constructor() {
     super();
     this.state = {
       name: '',
       dosage: null,
       frequency: 1,
+      withFood: false,
+      inventory: null
     }
   }
 
   static navigationOptions = {
     title: 'Add Medication',
+    headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
     },
     headerTintColor: '#EBEBEB',
     headerTitleStyle: {
-      fontSize: 30,
+      fontSize: height * 0.05,
     },
   };
 
@@ -28,7 +32,7 @@ export default class CreateAccount extends Component {
     const { navigation } = this.props;
     return(
       <View style={styles.container}>
-        <View style={styles.createAccount}>
+        <View style={styles.addMed}>
         <TextInput
           style={styles.input}
           placeholder='Enter Medication name'
@@ -48,7 +52,7 @@ export default class CreateAccount extends Component {
           placeholder='Enter Frequency'
           textAlign='center'
           keyboardType={'numeric'}
-          onChangeText={(frequency) => this.setState({ frequency })}
+          onChange={(frequency) => this.setState({ frequency })}
           value={this.state.frequency}
         />
         <TextInput 
@@ -56,7 +60,17 @@ export default class CreateAccount extends Component {
           placeholder='Inventory'
           textAlign='center'
           keyboardType={'numeric'}
+          onChange={(inventory) => this.setState({ inventory })}
+          value={this.state.inventory}
         />
+        <Picker
+          selectedValue={this.state.withFood}
+          style={styles.picker}
+          onValueChange={(itemValue) =>   this.setState({ withFood: itemValue})}
+          >
+          <Picker.Item label='Take WITH food' value={false}/>
+          <Picker.Item label='Take WITHOUT food' value={true}/>
+        </Picker>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>Add to Medicine Cabinet</Text>
         </TouchableOpacity>
@@ -100,8 +114,14 @@ const styles = StyleSheet.create({
     padding: 0,
     width: 300,
   },
-  createAccount: {
+  addMed: {
     flex: 1,
     justifyContent: 'space-around'
-  }
+  },
+  picker: {
+    flex: 0,
+    justifyContent: 'space-around',
+    height: 75,
+  },
+
 });
