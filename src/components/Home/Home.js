@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   generic: {
     fontSize: RFPercentage(4.5),
     color: '#000',
-    marginBottom: height * .05,
+    marginBottom: 75,
     textAlign: 'center'
   }
 });
