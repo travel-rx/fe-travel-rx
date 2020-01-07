@@ -44,6 +44,5 @@ const styles = StyleSheet.create({
     height: 60,
     justifyContent: 'space-around',
     alignItems: 'center'
-
   }
 });
