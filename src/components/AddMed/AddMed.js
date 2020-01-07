@@ -72,14 +72,13 @@ export default class AddMed extends Component {
           <Picker.Item label='Take WITHOUT food' value={true}/>
         </Picker>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>Add to Medicine Cabinet</Text>
+          <Text style={styles.text}>Add Medication</Text>
         </TouchableOpacity>
         </View>
         <Footer navigation={navigation}/>
       </View>
     )
   }
-
 }
 
 const styles = StyleSheet.create({
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#EBEBEB',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: height * 0.03
   },
   input: {
     borderColor: '#D7D7D7',
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     fontSize: 15,
-    width: 300,
+    width: width * 0.85,
   },
   button: {
     backgroundColor: '#3499AA',
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     padding: 0,
-    width: 300,
+    width: width * 0.85,
   },
   addMed: {
     flex: 1,
@@ -122,6 +121,5 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'space-around',
     height: 75,
-  },
-
+  }
 });
