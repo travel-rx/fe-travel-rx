@@ -10,7 +10,7 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 describe('Footer', () => {
-  it.only('should return true', () => {
+  it('should return true', () => {
     expect(true).toEqual(true);
   })
 })
