@@ -21,8 +21,6 @@ export class MedicineCabinet extends Component {
       fontSize: 30,
     },
   };
-
-
   
   render() {
     const { navigation, user } = this.props;
@@ -36,7 +34,7 @@ export class MedicineCabinet extends Component {
           <MaterialCommunityIcons
             color='#3499AA'
             name='pill'
-            size={60}
+            size={50}
           />
           <View>
           <Text style={styles.name}>{medication.name}</Text>
@@ -82,13 +80,12 @@ const styles = StyleSheet.create({
     color: '#EBEBEB',
     textAlign: 'center',
     fontSize: height * .04,
-    fontWeight: 'bold',
   },
   medicine: {
     flex: 1,
     flexDirection: 'row',
     marginTop: height * .06,
-    width: width * .8,
+    width: width * .9,
   },
   name: {
     color: '#3499AA',

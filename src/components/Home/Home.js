@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug } from '../../utils/apiCalls';
@@ -27,6 +27,7 @@ export class Home extends Component {
   };
   
   getGeneric = async () => {
+    Keyboard.dismiss();
     const { medName } = this.state 
     
     try {
@@ -46,6 +47,7 @@ export class Home extends Component {
           textAlign='center'
           onChangeText={(medName) => this.setState({ medName })}
           value={this.state.medName}
+          clearButtonMode='always'
         />
         <TouchableOpacity 
           style={styles.find}
@@ -96,7 +98,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     borderRadius: 12,
     borderWidth: 2,
-    width: width * 0.85
+    width: width * .85,
+    paddingLeft: 20
   },
   text: {
     color: '#EBEBEB',
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
     marginBottom: height * 0.02,
     overflow: 'hidden',
     padding: 12,
-    width: width * 0.85
+    width: width * .85
   },
   findText: {
     fontWeight: 'bold',
@@ -130,11 +133,12 @@ const styles = StyleSheet.create({
     margin: 0,
     overflow: 'hidden',
     padding: 0,
-    width: 250,
+    width: width * 0.85,
   },
   generic: {
-    fontSize: 20,
-    color: '#2E3637',
-    marginBottom: 20
+    fontSize: 25,
+    color: '#3499AA',
+    marginBottom: 20,
+    textAlign: 'center'
   }
 });

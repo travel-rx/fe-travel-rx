@@ -47,23 +47,23 @@ export default class EmergencyTranslations extends Component {
         <ScrollView style={styles.translationContainer}>
           <View style={styles.translation}>
             <Text style={styles.translatedLanguage}>{language.help}</Text>
-            <Text style={styles.english}>Help</Text>
+            <Text style={styles.english}>"Help"</Text>
           </View>
           <View style={styles.translation}>
             <Text style={styles.translatedLanguage}>{language.doctor}</Text>
-            <Text style={styles.english}>I need a doctor</Text>
+            <Text style={styles.english}>"I need a doctor"</Text>
           </View>
           <View style={styles.translation}>
             <Text style={styles.translatedLanguage}>{language.accident}</Text>
-            <Text style={styles.english}>There's been an accident</Text>
+            <Text style={styles.english}>"There's been an accident"</Text>
           </View>
           <View style={styles.translation}>
             <Text style={styles.translatedLanguage}>{language.ambulance}</Text>
-            <Text style={styles.english}>I need an ambulance</Text>
+            <Text style={styles.english}>"I need an ambulance"</Text>
           </View>
           <View style={styles.translation}>
             <Text style={styles.translatedLanguage}>{language.medication}</Text>
-            <Text style={styles.english}>Medicine</Text>
+            <Text style={styles.english}>"Medicine"</Text>
           </View>
         </ScrollView>
         <Footer navigation={navigation}/>
@@ -79,14 +79,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   translationContainer: {
-    marginTop: 125,
-    marginHorizontal: 15
+    marginTop: 50,
+    backgroundColor: '#fff',
+    marginHorizontal: 15,
+    width: width * .9,
+    zIndex: 1
   },
   picker: {
     flex: 0,
-    height: height * .03,
+    height: height * .02,
     justifyContent: 'space-around',
-    marginTop: height * .1,
+    marginTop: height * .08,
     width: 150
   },
   translation: {
@@ -94,12 +97,10 @@ const styles = StyleSheet.create({
   },
   english: {
     color: '#000',
-    fontSize: height * .05,
-    fontWeight: 'bold'
+    fontSize: height * .04
   },
   translatedLanguage: {
     color: '#3499AA',
-    fontSize: height * .06,
-    fontWeight: 'bold'
+    fontSize: height * .05
   }
 });

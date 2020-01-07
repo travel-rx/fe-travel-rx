@@ -44,10 +44,8 @@ export default class MedDetails extends Component {
         <View style={styles.medDetails}>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.generic}>{genericName}</Text>
-          <Text style={styles.text}>{dosage} taken {frequency} times per day</Text>
+          <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
           <Text style={styles.text}>{withFood ? 'Take with food' : 'Can take without food'}</Text>
-
-
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Delete Medication</Text>
         </TouchableOpacity>

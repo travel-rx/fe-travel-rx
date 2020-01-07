@@ -72,7 +72,7 @@ export default class AddMed extends Component {
           <Picker.Item label='Take WITHOUT food' value={true}/>
         </Picker>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>Add Medication</Text>
+          <Text style={styles.text}>Save</Text>
         </TouchableOpacity>
         </View>
         <Footer navigation={navigation}/>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#EBEBEB',
     textAlign: 'center',
-    fontSize: height * 0.03
+    fontSize: height * 0.04
   },
   input: {
     borderColor: '#D7D7D7',
