@@ -9,7 +9,7 @@ export default class AddMed extends Component {
     super();
     this.state = {
       name: '',
-      dosage: null,
+      dosage: '',
       frequency: 1,
       withFood: false,
       inventory: null
@@ -35,21 +35,21 @@ export default class AddMed extends Component {
         <View style={styles.addMed}>
         <TextInput
           style={styles.input}
-          placeholder='Enter Medication name'
+          placeholder='Medication name'
           textAlign='center'
           onChangeText={(name) => this.setState({ name })}
           value={this.state.name}
         />
         <TextInput
           style={styles.input}
-          placeholder='Enter Dosage'
+          placeholder='Dosage'
           textAlign='center'
           onChangeText={(dosage) => this.setState({ dosage })}
           value={this.state.dosage}
         />
         <TextInput 
           style={styles.input}
-          placeholder='Enter Frequency'
+          placeholder='Times taken per day'
           textAlign='center'
           keyboardType={'numeric'}
           onChange={(frequency) => this.setState({ frequency })}

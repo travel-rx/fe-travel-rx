@@ -21,6 +21,8 @@ export class MedicineCabinet extends Component {
       fontSize: 30,
     },
   };
+
+
   
   render() {
     const { navigation, user } = this.props;
@@ -29,7 +31,7 @@ export class MedicineCabinet extends Component {
         <TouchableOpacity 
           style={styles.medicine} 
           key={medication.name}
-          onPress={() => navigation.navigate('MedDetails', medication)}
+          onPress={() => navigation.navigate('MedDetails', {medication: medication})}
         >
           <MaterialCommunityIcons
             color='#3499AA'

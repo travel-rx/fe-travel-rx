@@ -9,13 +9,20 @@ export default class MedDetails extends Component {
   constructor() {
     super();
     this.state = {
-
+      id: null,
+      name: '',
+      genericName: '',
+      dosage: '',
+      frequency: 1,
+      withFood: false,
+      inventory: null
     }
   }
 
   componentDidMount() {
-    const { medicine } = this.props; 
-    console.log('medicine', medicine)
+    const { medication } = this.props.navigation.state.params;
+    const { id, name, genericName, dosage, frequency, withFood, inventory} = medication;
+    this.setState({ id, name, genericName, dosage, frequency, withFood, inventory})
   }
 
   static navigationOptions = {
@@ -32,6 +39,7 @@ export default class MedDetails extends Component {
 
   render() {
     const { navigation } = this.props;
+    console.log('state', this.state)
     return (
       <View style={styles.container}>
         <View style={styles.medDetails}>
