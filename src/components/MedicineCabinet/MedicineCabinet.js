@@ -22,17 +22,17 @@ export class MedicineCabinet extends Component {
   
   render() {
     const { navigation, user } = this.props;
-    const medicines = data.meds.map(medicine => {
+    const medications = data.meds.map(medication => {
       return (
-        <View style={styles.medicine}>
+        <View style={styles.medicine} key={medication.name}>
           <MaterialCommunityIcons
             color='#3499AA'
             name='pill'
             size={60}
           />
           <View>
-          <Text style={styles.name}>{medicine.name}</Text>
-          <Text style={styles.genericName}>{medicine.genericName}</Text>
+          <Text style={styles.name}>{medication.name}</Text>
+          <Text style={styles.genericName}>{medication.genericName}</Text>
           </View>
         </View>
       )
@@ -40,33 +40,9 @@ export class MedicineCabinet extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          {medicines}
-        </ScrollView>
-        {/* <View style={styles.medContainer}>
           {user === null && <Text>Please sign in or create an account to view Medicine Cabinet</Text>}
-          {user != null && <View style={styles.medicine}>
-            <MaterialCommunityIcons
-              color='#3499AA'
-              name='pill'
-              size={60}
-              />
-              <View>
-                <Text style={styles.name}>Phenergan</Text>
-                <Text style={styles.genericName}>Promethazine</Text>
-              </View>
-          </View>}
-          <View style={styles.medicine}>
-            <MaterialCommunityIcons
-              color='#3499AA'
-              name='pill'
-              size={60}
-              />
-              <View>
-                <Text style={styles.name}>Vibramycin</Text>
-                <Text style={styles.genericName}>Doxycycline</Text>
-              </View>
-          </View>
-        </View> */}
+          {user !== null && medications}
+        </ScrollView>
         <TouchableOpacity 
           style={styles.button}
           onPress={() => navigation.navigate('AddMed')}
