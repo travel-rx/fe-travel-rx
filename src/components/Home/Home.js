@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug } from '../../utils/apiCalls';
 
-export default class Home extends Component {
+const {height, width} = Dimensions.get('screen');
+
+export class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,7 +14,7 @@ export default class Home extends Component {
       genericName: ''
     }
   };
-
+  
   static navigationOptions = {
     title: 'TravelRx',
     headerStyle: {
@@ -22,19 +25,19 @@ export default class Home extends Component {
       fontSize: 30,
     },
   };
-
+  
   getGeneric = async () => {
     const { medName } = this.state 
+    
     try {
       const genericName = await getDrug(medName)
       this.setState({ genericName })
     } catch ({ error }){
-
     }
   }
-
+  
   render() {
-    const { navigation } = this.props;
+    const { navigation, user } = this.props;
     return (
       <View style={styles.container}>
         <TextInput 
@@ -51,23 +54,33 @@ export default class Home extends Component {
           <Text style={styles.findText}>Find Generic Name</Text>
         </TouchableOpacity>
         <Text style={styles.generic}>{this.state.genericName}</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Login')}
-        >
-          <Text style={styles.text}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('CreateAccount')}
-        >
-          <Text style={styles.text}>Create Account</Text>
-        </TouchableOpacity>
+        {user === null && 
+          <View> 
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('Login')}
+            >
+              <Text style={styles.text}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('CreateAccount')}
+            >
+              <Text style={styles.text}>Create Account</Text>
+            </TouchableOpacity>
+          </View>}
         <Footer navigation={navigation}/>
       </View>
     );
   }
 }
+
+export const mapStateToProps = ({ user }) => ({
+  user
+})
+
+
+export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
   container: {
@@ -80,10 +93,10 @@ const styles = StyleSheet.create({
   input: {
     borderColor: '#D7D7D7',
     height: 50,
-    width: 250,
     fontSize: 15,
     borderRadius: 12,
-    borderWidth: 2
+    borderWidth: 2,
+    width: width * 0.75
   },
   text: {
     color: '#EBEBEB',
@@ -95,9 +108,10 @@ const styles = StyleSheet.create({
     borderColor: '#3499AA',
     borderWidth: 2,
     borderRadius: 12,
+    marginBottom: height * 0.02,
     overflow: 'hidden',
     padding: 12,
-    width: 250
+    width: width * 0.75
   },
   findText: {
     fontWeight: 'bold',
@@ -112,7 +126,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     display: 'flex',
     fontWeight: 'bold',
-    height: 45,
     justifyContent: 'center',
     margin: 0,
     overflow: 'hidden',

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { AntDesign, FontAwesome } from '@expo/vector-icons';
+import { AntDesign, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
 export default class Footer extends Component {
   
@@ -22,7 +22,7 @@ export default class Footer extends Component {
       <TouchableOpacity
         onPress={() => navigate('Trips')}
       >
-        <FontAwesome name='plane' size={45} color='#EBEBEB' />
+        <MaterialIcons name='translate' size={45} color='#EBEBEB' />
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigate('About')}
