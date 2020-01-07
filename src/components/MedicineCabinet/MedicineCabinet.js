@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import data from './../../utils/data';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export class MedicineCabinet extends Component {
   
@@ -20,10 +22,27 @@ export class MedicineCabinet extends Component {
   
   render() {
     const { navigation, user } = this.props;
-
+    const medicines = data.meds.map(medicine => {
+      return (
+        <View style={styles.medicine}>
+          <MaterialCommunityIcons
+            color='#3499AA'
+            name='pill'
+            size={60}
+          />
+          <View>
+          <Text style={styles.name}>{medicine.name}</Text>
+          <Text style={styles.genericName}>{medicine.genericName}</Text>
+          </View>
+        </View>
+      )
+    })
     return (
       <View style={styles.container}>
-        <View style={styles.medContainer}>
+        <ScrollView>
+          {medicines}
+        </ScrollView>
+        {/* <View style={styles.medContainer}>
           {user === null && <Text>Please sign in or create an account to view Medicine Cabinet</Text>}
           {user != null && <View style={styles.medicine}>
             <MaterialCommunityIcons
@@ -47,7 +66,7 @@ export class MedicineCabinet extends Component {
                 <Text style={styles.genericName}>Doxycycline</Text>
               </View>
           </View>
-        </View>
+        </View> */}
         <TouchableOpacity 
           style={styles.button}
           onPress={() => navigation.navigate('AddMed')}
