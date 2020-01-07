@@ -1,6 +1,7 @@
 const data = {
   meds: [
     {
+      id: 1,
       name : 'Phenergan',
       genericName : 'Promethazine',
       withFood : false,
@@ -8,6 +9,7 @@ const data = {
       dose : '25mg'
     },
     {
+      id: 2,
       name : 'Vibramycin',
       genericName : 'Doxycycline',
       withFood : true,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Footer from '../Footer/Footer';
 
 
@@ -14,7 +14,7 @@ export default class About extends Component {
     headerTintColor: '#EBEBEB',
     headerTitleStyle: {
       fontSize: 30,
-    },
+    }
   };
 
   render() {
@@ -33,13 +33,6 @@ export default class About extends Component {
             Devonshire rex singapura grimalkin. Malkin malkin or cornish rex. Grimalkin sphynx ragdoll or devonshire rex yet tomcat but birman for mouser. British shorthair tiger. Bobcat egyptian mau. Norwegian forest british shorthair but cougar ragdoll leopard, savannah russian blue.
           </Text>
         </ScrollView>
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={() => navigation.navigate('FAQ')}>
-          <Text style={styles.buttonText}>
-            FAQ's
-          </Text>
-        </TouchableOpacity>
         <Footer navigation={navigation}/>
       </View>
     )
@@ -60,25 +53,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     margin: 10,
     textAlign: 'center',
-  },
-  button: {
-    backgroundColor: '#3499AA',
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 12,
-    display: 'flex',
-    fontWeight: 'bold',
-    height: 45,
-    justifyContent: 'center',
-    overflow: 'hidden',
-    padding: 0,
-    width: 250,
-    margin: 15
-  },
-  buttonText: {
-    color: '#EBEBEB',
-    textAlign: 'center',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
+  }
 });

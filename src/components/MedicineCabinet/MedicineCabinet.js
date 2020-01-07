@@ -26,7 +26,11 @@ export class MedicineCabinet extends Component {
     const { navigation, user } = this.props;
     const medications = data.meds.map(medication => {
       return (
-        <View style={styles.medicine} key={medication.name}>
+        <TouchableOpacity 
+          style={styles.medicine} 
+          key={medication.name}
+          onPress={() => navigation.navigate('MedDetails', medication)}
+        >
           <MaterialCommunityIcons
             color='#3499AA'
             name='pill'
@@ -36,7 +40,7 @@ export class MedicineCabinet extends Component {
           <Text style={styles.name}>{medication.name}</Text>
           <Text style={styles.genericName}>{medication.genericName}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       )
     })
 
@@ -72,12 +76,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  heading: {
-    color: '#3499AA',
-    fontSize: height * .05,
-    paddingTop: height * .2,
-
-  },
   buttonText: {
     color: '#EBEBEB',
     textAlign: 'center',
@@ -92,14 +90,14 @@ const styles = StyleSheet.create({
   },
   name: {
     color: '#3499AA',
-    fontSize: height * .05,
+    fontSize: height * .04,
     fontWeight: 'bold',
-    marginLeft: width * .05
+    marginLeft: width * .02
   },
   genericName: {
     color: '#212B31',
     fontSize: height * .03,
-    marginLeft: width * .06
+    marginLeft: width * .02
   },
   button: {
     backgroundColor: '#3499AA',
@@ -108,11 +106,11 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     display: 'flex',
     fontWeight: 'bold',
-    height: height * .07,
+    height: 45,
     justifyContent: 'center',
     overflow: 'hidden',
     padding: 0,
-    width: width * .75,
+    width: width * .85,
     marginBottom: height * .05
   },
 });

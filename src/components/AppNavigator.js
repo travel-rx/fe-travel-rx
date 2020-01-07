@@ -8,7 +8,7 @@ import MedicineCabinet from '../components/MedicineCabinet/MedicineCabinet';
 import About from '../components/About/About';
 import AddMed from '../components/AddMed/AddMed';
 import AddTrip from '../components/AddTrip/AddTrip';
-import FAQ from '../components/FAQ/FAQ';
+import MedDetails from '../components/MedDetails/MedDetails';
 
 const AppNavigator = createStackNavigator({
   Home: { screen: Home },
@@ -19,7 +19,7 @@ const AppNavigator = createStackNavigator({
   About: { screen: About },
   AddMed: { screen: AddMed },
   AddTrip: { screen: AddTrip},
-  FAQ: { screen: FAQ }
+  MedDetails: { screen: MedDetails }
 });
 
 export default createAppContainer(AppNavigator);
