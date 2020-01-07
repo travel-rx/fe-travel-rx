@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug } from '../../utils/apiCalls';
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 
 const { height, width } = Dimensions.get('screen');
@@ -13,7 +13,8 @@ export class Home extends Component {
     super();
     this.state = {
       medName: '',
-      genericName: ''
+      genericName: 'Enter medication to find generic name',
+      error: ''
     }
   };
   
@@ -38,27 +39,34 @@ export class Home extends Component {
     } catch ({ error }){
     }
   }
+
   
   render() {
-    const { navigation, user } = this.props;
+    const { navigation } = this.props;
+
     return (
       <View style={styles.container}>
-        <TextInput 
-          style={styles.input}
-          placeholder='Enter Medication'
-          textAlign='center'
-          onChangeText={(medName) => this.setState({ medName })}
-          value={this.state.medName}
-          clearButtonMode='always'
-        />
-        <TouchableOpacity 
-          style={styles.find}
-          onPress={() => this.getGeneric()}
-        >
-          <Text style={styles.findText}>Find Generic Name</Text>
-        </TouchableOpacity>
+          <ScrollView>
+            <View style={styles.inputContainer}>
+              <TextInput 
+                style={styles.input}
+                placeholder='Enter Medication'
+                textAlign='center'
+                onChangeText={(medName) => this.setState({ medName })}
+                value={this.state.medName}
+                clearButtonMode='always'
+                keyboardShouldPersistTaps='handled'
+              />
+              <TouchableOpacity 
+                style={styles.find}
+                onPress={() => this.getGeneric()}
+              >
+              <Text style={styles.findText}>Find Generic Name</Text>
+          </TouchableOpacity>
+        </View>
+            </ScrollView>
         <Text style={styles.generic}>{this.state.genericName}</Text>
-        {user === null && 
+        {/* {user === null && 
           <View> 
             <TouchableOpacity
               style={styles.button}
@@ -72,7 +80,7 @@ export class Home extends Component {
             >
               <Text style={styles.text}>Create Account</Text>
             </TouchableOpacity>
-          </View>}
+          </View>} */}
         <Footer navigation={navigation}/>
       </View>
     );
@@ -96,10 +104,12 @@ const styles = StyleSheet.create({
   },
   input: {
     borderColor: '#D7D7D7',
-    height: 50,
-    fontSize: 15,
     borderRadius: 12,
     borderWidth: 2,
+    height: 50,
+    fontSize: 15,
+    marginBottom: 35,
+    marginTop: 20,
     width: width * .85,
   },
   text: {
@@ -138,7 +148,7 @@ const styles = StyleSheet.create({
   },
   generic: {
     fontSize: RFPercentage(4.5),
-    color: '#3499AA',
+    color: '#000',
     marginBottom: height * .05,
     textAlign: 'center'
   }

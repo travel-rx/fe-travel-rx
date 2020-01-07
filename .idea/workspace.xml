@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29175e4a-a6bb-4908-80bd-536b359bdc9f" name="Default Changelist" comment="" />
+    <list default="true" id="29175e4a-a6bb-4908-80bd-536b359bdc9f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/AddMed/AddMed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddMed/AddMed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EmergencyTranslations/EmergencyTranslations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EmergencyTranslations/EmergencyTranslations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MedDetails/MedDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MedDetails/MedDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MedicineCabinet/MedicineCabinet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MedicineCabinet/MedicineCabinet.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +18,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28_2" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -27,9 +33,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>

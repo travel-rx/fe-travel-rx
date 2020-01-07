@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
@@ -12,7 +13,7 @@ export default class AddMed extends Component {
       dosage: '',
       frequency: 1,
       withFood: false,
-      inventory: null
+      inventory: 0
     }
   }
 
@@ -32,49 +33,46 @@ export default class AddMed extends Component {
     const { navigation } = this.props;
     return(
       <View style={styles.container}>
-        <View style={styles.addMed}>
-        <TextInput
-          style={styles.input}
-          placeholder='Medication name'
-          textAlign='center'
-          onChangeText={(name) => this.setState({ name })}
-          value={this.state.name}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder='Dosage'
-          textAlign='center'
-          onChangeText={(dosage) => this.setState({ dosage })}
-          value={this.state.dosage}
-        />
-        <TextInput 
-          style={styles.input}
-          placeholder='Times taken per day'
-          textAlign='center'
-          keyboardType={'numeric'}
-          onChange={(frequency) => this.setState({ frequency })}
-          value={this.state.frequency}
-        />
-        <TextInput 
-          style={styles.input}
-          placeholder='Inventory'
-          textAlign='center'
-          keyboardType={'numeric'}
-          onChange={(inventory) => this.setState({ inventory })}
-          value={this.state.inventory}
-        />
-        <Picker
-          selectedValue={this.state.withFood}
-          style={styles.picker}
-          onValueChange={(itemValue) =>   this.setState({ withFood: itemValue})}
-          >
-          <Picker.Item label='Take WITH food' value={false}/>
-          <Picker.Item label='Take WITHOUT food' value={true}/>
-        </Picker>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>Save</Text>
-        </TouchableOpacity>
-        </View>
+        <ScrollView>
+          <View style={styles.addMed}>
+            <TextInput
+              style={styles.input}
+              placeholder='Medication name'
+              textAlign='center'
+              onChangeText={(name) => this.setState({ name })}
+              value={this.state.name}
+              keyboardShouldPersistTaps='always'
+            />
+            <TextInput
+              style={styles.input}
+              placeholder='Dosage'
+              textAlign='center'
+              onChangeText={(dosage) => this.setState({ dosage })}
+              value={this.state.dosage}
+              keyboardShouldPersistTaps='always'
+            />
+            <TextInput 
+              style={styles.input}
+              placeholder='Times taken per day'
+              textAlign='center'
+              keyboardType={'numeric'}
+              onChange={(frequency) => this.setState({ frequency })}
+              value={this.state.frequency}
+              keyboardShouldPersistTaps='always'
+            />
+            <Picker
+              selectedValue={this.state.withFood}
+              style={styles.picker}
+              onValueChange={(itemValue) => this.setState({ withFood: itemValue})}
+            >
+              <Picker.Item label='Take WITH food' value={false}/>
+              <Picker.Item label='Take WITHOUT food' value={true}/>
+            </Picker>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.text}>Save</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
         <Footer navigation={navigation}/>
       </View>
     )
@@ -98,6 +96,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: height * 0.08,
     fontSize: 15,
+    marginTop: 20,
+    fontSize: RFPercentage(4),
     width: width * 0.85,
   },
   button: {
@@ -109,17 +109,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     height: height * 0.06,
     justifyContent: 'center',
+    marginTop: 75,
     overflow: 'hidden',
-    padding: 0,
     width: width * 0.85,
   },
   addMed: {
-    flex: 1,
-    justifyContent: 'space-around'
+    marginTop: 30
   },
   picker: {
     flex: 0,
     justifyContent: 'space-around',
     height: 75,
+    marginTop: 50
   }
 });

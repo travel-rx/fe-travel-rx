@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import data from './../../utils/data';
 import { ScrollView } from 'react-native-gesture-handler';
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 const {height, width} = Dimensions.get('screen');
 
