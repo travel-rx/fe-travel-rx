@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
@@ -25,7 +26,7 @@ export default class MedDetails extends Component {
   }
 
   static navigationOptions = {
-    title: 'Medicine Details',
+    title: 'Medication Details',
     headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
@@ -42,10 +43,12 @@ export default class MedDetails extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.medDetails}>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.generic}>{genericName}</Text>
-          <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
-          <Text style={styles.text}>{withFood ? 'Take with food' : 'Can take without food'}</Text>
+          <View>
+            <Text style={styles.name}>{name}</Text>
+            <Text style= {styles.generic} >{genericName}</Text>
+            <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
+            <Text style={styles.text}>{withFood ? 'Take with food' : 'Can take without food'}</Text>
+          </View>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Delete Medication</Text>
         </TouchableOpacity>
@@ -60,37 +63,44 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   medDetails: {
+    alignItems: 'center',
     flex: 1,
-    justifyContent: 'space-around'
+    justifyContent: 'space-between',
+    marginTop: 25,
+    marginBottom: 20
   },
   name: {
     textAlign: 'center',
     color: '#3499AA',
-    fontSize: 25
+    fontSize: RFPercentage(5.5),
+    fontWeight: 'bold',
+    marginBottom: 10
   },
   generic: {
     textAlign: 'center',
-    color: '#3499AA',
-    fontSize: 20
+    color: '#000',
+    fontSize: RFPercentage(3.5),
+    fontWeight: 'bold',
+    marginBottom: 30
   },
   text: {
+    fontSize: RFPercentage(4),
+    padding: 18,
     textAlign: 'center',
-    // color: '#3499AA',
   },
   button: {
     backgroundColor: '#3499AA',
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
-    display: 'flex',
     fontWeight: 'bold',
-    height: 45,
+    height: 40,
     justifyContent: 'center',
+    marginLeft: 9,
     overflow: 'hidden',
-    padding: 0,
     width: width * 0.85,
   },
   buttonText: {

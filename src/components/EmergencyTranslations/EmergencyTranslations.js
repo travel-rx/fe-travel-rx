@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Picker, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Picker, Dimensions } from 'react-native';
 import data from './data'
 import Footer from '../Footer/Footer';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
@@ -79,28 +80,29 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   translationContainer: {
-    marginTop: 50,
     backgroundColor: '#fff',
-    marginHorizontal: 15,
+    borderTopColor: '#3499AA',
+    borderTopWidth: 2,
+    marginTop: height * .07,
     width: width * .9,
-    zIndex: 1
   },
   picker: {
     flex: 0,
-    height: height * .02,
+    height: height * .03,
     justifyContent: 'space-around',
     marginTop: height * .08,
     width: 150
   },
   translation: {
-    marginBottom: height * .05
+    marginTop: height * .03,
+    marginBottom: height * .02
   },
   english: {
     color: '#000',
-    fontSize: height * .04
+    fontSize: RFPercentage(3)
   },
   translatedLanguage: {
     color: '#3499AA',
-    fontSize: height * .05
+    fontSize: RFPercentage(5)
   }
 });
