@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions, Keyboa
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug } from '../../utils/apiCalls';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+
 
 const { height, width } = Dimensions.get('screen');
 
@@ -135,7 +137,7 @@ const styles = StyleSheet.create({
     width: width * 0.85,
   },
   generic: {
-    fontSize: 25,
+    fontSize: RFPercentage(4.5),
     color: '#3499AA',
     marginBottom: height * .05,
     textAlign: 'center'

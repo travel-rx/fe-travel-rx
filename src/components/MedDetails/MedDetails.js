@@ -25,7 +25,7 @@ export default class MedDetails extends Component {
   }
 
   static navigationOptions = {
-    title: 'Medicine Details',
+    title: 'Medication Details',
     headerLeft: null,
     headerStyle: {
       backgroundColor: '#3499AA'
@@ -43,7 +43,7 @@ export default class MedDetails extends Component {
       <View style={styles.container}>
         <View style={styles.medDetails}>
           <Text style={styles.name}>{name}</Text>
-          <Text style={styles.generic}>{genericName}</Text>
+          <Text style= {styles.generic} >{genericName}</Text>
           <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
           <Text style={styles.text}>{withFood ? 'Take with food' : 'Can take without food'}</Text>
         <TouchableOpacity style={styles.button}>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     display: 'flex',
     fontWeight: 'bold',
-    height: 45,
+    height: height * 0.06,
     justifyContent: 'center',
     overflow: 'hidden',
     padding: 0,

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import data from './data'
 import Footer from '../Footer/Footer';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
@@ -98,10 +99,10 @@ const styles = StyleSheet.create({
   },
   english: {
     color: '#000',
-    fontSize: height * .025
+    fontSize: RFPercentage(3)
   },
   translatedLanguage: {
     color: '#3499AA',
-    fontSize: height * .05
+    fontSize: RFPercentage(5)
   }
 });
