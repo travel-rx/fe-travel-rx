@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug } from '../../utils/apiCalls';
 
-const {height, width} = Dimensions.get('screen');
+const { height, width } = Dimensions.get('screen');
 
 export class Home extends Component {
   constructor() {
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     borderRadius: 12,
     borderWidth: 2,
-    width: width * 0.75
+    width: width * 0.85
   },
   text: {
     color: '#EBEBEB',
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     marginBottom: height * 0.02,
     overflow: 'hidden',
     padding: 12,
-    width: width * 0.75
+    width: width * 0.85
   },
   findText: {
     fontWeight: 'bold',
