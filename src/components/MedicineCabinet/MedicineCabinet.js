@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import data from './../../utils/data';
 import { ScrollView } from 'react-native-gesture-handler';
+
+const {height, width} = Dimensions.get('screen');
 
 export class MedicineCabinet extends Component {
   
@@ -37,6 +39,7 @@ export class MedicineCabinet extends Component {
         </View>
       )
     })
+
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -61,45 +64,42 @@ export const mapStateToProps = ({ user }) => ({
   user
 })
 
-
 export default connect(mapStateToProps)(MedicineCabinet);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   heading: {
     color: '#3499AA',
-    fontSize: 40,
-    paddingTop: 20,
+    fontSize: height * .05,
+    paddingTop: height * .2,
 
   },
   buttonText: {
     color: '#EBEBEB',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: height * .04,
     fontWeight: 'bold',
-  },
-  medContainer: {
-    flex: 1,
-    margin: 25
   },
   medicine: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: height * .06,
+    width: width * .8,
   },
   name: {
     color: '#3499AA',
-    fontSize: 25,
+    fontSize: height * .05,
     fontWeight: 'bold',
-    marginLeft: 20
+    marginLeft: width * .05
   },
   genericName: {
     color: '#212B31',
-    fontSize: 15,
-    marginLeft: 20
+    fontSize: height * .03,
+    marginLeft: width * .06
   },
   button: {
     backgroundColor: '#3499AA',
@@ -108,11 +108,11 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     display: 'flex',
     fontWeight: 'bold',
-    height: 45,
+    height: height * .07,
     justifyContent: 'center',
     overflow: 'hidden',
     padding: 0,
-    width: 250,
-    marginBottom: 25
+    width: width * .75,
+    marginBottom: height * .05
   },
 });
