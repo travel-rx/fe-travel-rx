@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import CreateAccount from '../components/CreateAccount/CreateAccount';
-import Trips from './EmergencyTranslations/EmergencyTranslations';
+import EmergencyTranslations from '../components/EmergencyTranslations/EmergencyTranslations';
 import MedicineCabinet from '../components/MedicineCabinet/MedicineCabinet';
 import About from '../components/About/About';
 import AddMed from '../components/AddMed/AddMed';
@@ -14,7 +14,7 @@ const AppNavigator = createStackNavigator({
   Home: { screen: Home },
   Login: { screen: Login },
   CreateAccount: { screen: CreateAccount },
-  Trips: { screen: Trips },
+  EmergencyTranslations: { screen: EmergencyTranslations },
   MedicineCabinet: { screen: MedicineCabinet },
   About: { screen: About },
   AddMed: { screen: AddMed },
