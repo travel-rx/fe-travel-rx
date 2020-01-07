@@ -32,13 +32,15 @@ export default class EmergencyTranslations extends Component {
         <Picker
           selectedValue={this.state.language}
           style={{height: 50, width: 150}}
-          onValueChange={(itemValue, itemIndex) =>
-            this.setState({language: itemValue})
+          onValueChange={(itemValue) =>
+            this.setState({ language: itemValue })
           }
         >
           <Picker.Item label= "Spanish" value= 'spanish'/>
           <Picker.Item label= "French" value= 'french'/>
           <Picker.Item label= "German" value= 'german'/>
+          <Picker.Item label= "Chinese" value= 'chinese'/>
+          <Picker.Item label= "Arabic" value= 'arabic'/>
         </Picker>
         <ScrollView style={styles.translationContainer}>
           <Text>Help</Text>
