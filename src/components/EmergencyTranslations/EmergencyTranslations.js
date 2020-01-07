@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Picker } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import data from './data'
 import Footer from '../Footer/Footer';
+
+const { height, width } = Dimensions.get('screen');
 
 export default class EmergencyTranslations extends Component {
   constructor() {
@@ -19,7 +21,7 @@ export default class EmergencyTranslations extends Component {
     },
     headerTintColor: '#EBEBEB',
     headerTitleStyle: {
-      fontSize: 30,
+      fontSize: height * .04,
     },
   };
 
@@ -31,7 +33,7 @@ export default class EmergencyTranslations extends Component {
       <View style={styles.container}>
         <Picker
           selectedValue={this.state.language}
-          style={{height: 50, width: 150}}
+          style={styles.picker}
           onValueChange={(itemValue) =>
             this.setState({ language: itemValue })
           }
@@ -43,16 +45,26 @@ export default class EmergencyTranslations extends Component {
           <Picker.Item label= "Arabic" value= 'arabic'/>
         </Picker>
         <ScrollView style={styles.translationContainer}>
-          <Text>Help</Text>
-          <Text>{language.help}</Text>
-          <Text>I need a doctor</Text>
-          <Text>{language.doctor}</Text>
-          <Text>There's been an accident</Text>
-          <Text>{language.accident}</Text>
-          <Text>I need an ambulance</Text>
-          <Text>{language.ambulance}</Text>
-          <Text>Medicine</Text>
-          <Text>{language.medication}</Text>
+          <View style={styles.translation}>
+            <Text style={styles.translatedLanguage}>{language.help}</Text>
+            <Text style={styles.english}>Help</Text>
+          </View>
+          <View style={styles.translation}>
+            <Text style={styles.translatedLanguage}>{language.doctor}</Text>
+            <Text style={styles.english}>I need a doctor</Text>
+          </View>
+          <View style={styles.translation}>
+            <Text style={styles.translatedLanguage}>{language.accident}</Text>
+            <Text style={styles.english}>There's been an accident</Text>
+          </View>
+          <View style={styles.translation}>
+            <Text style={styles.translatedLanguage}>{language.ambulance}</Text>
+            <Text style={styles.english}>I need an ambulance</Text>
+          </View>
+          <View style={styles.translation}>
+            <Text style={styles.translatedLanguage}>{language.medication}</Text>
+            <Text style={styles.english}>Medicine</Text>
+          </View>
         </ScrollView>
         <Footer navigation={navigation}/>
       </View>
@@ -66,38 +78,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  heading: {
-    color: '#3499AA',
-    fontSize: 40,
-    paddingTop: 20,
-  },
-  buttonText: {
-    color: '#EBEBEB',
-    textAlign: 'center',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
   translationContainer: {
     marginTop: 125,
     marginHorizontal: 15
   },
-  trip: {
-    flex: 1,
-    flexDirection: 'row',
-    marginBottom: 20
+  picker: {
+    flex: 0,
+    height: height * .03,
+    justifyContent: 'space-around',
+    marginTop: height * .1,
+    width: 150
   },
-  button: {
-    backgroundColor: '#3499AA',
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 12,
-    display: 'flex',
-    fontWeight: 'bold',
-    height: 45,
-    justifyContent: 'center',
-    overflow: 'hidden',
-    padding: 0,
-    width: 250,
-    marginBottom: 25
+  translation: {
+    marginBottom: height * .05
   },
+  english: {
+    color: '#000',
+    fontSize: height * .05,
+    fontWeight: 'bold'
+  },
+  translatedLanguage: {
+    color: '#3499AA',
+    fontSize: height * .06,
+    fontWeight: 'bold'
+  }
 });
