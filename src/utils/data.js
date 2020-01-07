@@ -6,8 +6,7 @@ const data = {
       genericName: 'Promethazine',
       withFood: false,
       frequency: 3,
-      dosage: '25mg',
-      inventory: 20
+      dosage: '25mg'
     },
     {
       id: 2,
@@ -15,8 +14,7 @@ const data = {
       genericName: 'Doxycycline',
       withFood: true,
       frequency: 1,
-      dosage: '200mg',
-      inventory: 50
+      dosage: '200mg'
     }
   ]
 }

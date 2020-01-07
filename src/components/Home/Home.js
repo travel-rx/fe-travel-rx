@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
-import { getDrug } from '../../utils/apiCalls';
+import { getDrug, getMeds } from '../../utils/apiCalls';
+import { setMeds } from '../../actions/index';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 
@@ -17,6 +18,16 @@ export class Home extends Component {
       error: ''
     }
   };
+
+  async componentDidMount() {
+    const { setMeds } = this.props;
+    try {
+      const meds = await getMeds();
+      await setMeds(meds)
+    } catch ({ error }) {
+      this.setState({ error })
+    }
+  }
   
   static navigationOptions = {
     title: 'TravelRx',
@@ -37,6 +48,7 @@ export class Home extends Component {
       const genericName = await getDrug(medName)
       this.setState({ genericName })
     } catch ({ error }){
+      this.setState({ error })
     }
   }
 
@@ -87,12 +99,11 @@ export class Home extends Component {
   }
 }
 
-export const mapStateToProps = ({ user }) => ({
-  user
-})
+export const mapDispatchToProps = dispatch => ({
+  setMeds: meds => dispatch(setMeds(meds))
+}) 
 
-
-export default connect(mapStateToProps)(Home);
+export default connect(null, mapDispatchToProps)(Home);
 
 const styles = StyleSheet.create({
   container: {
