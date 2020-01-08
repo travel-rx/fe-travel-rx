@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
+import { deleteMed } from '../../utils/apiCalls';
+import { setMeds } from '../../actions';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
-export default class MedDetails extends Component {
+export class MedDetails extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,7 +17,8 @@ export default class MedDetails extends Component {
       genericName: '',
       dosage: '',
       frequency: 1,
-      food: false
+      food: false,
+      error: ''
     }
   }
 
@@ -23,6 +26,18 @@ export default class MedDetails extends Component {
     const { medication } = this.props.navigation.state.params;
     const { id, name, generic_name, dosage_amt, frequency, with_food } = medication;
     this.setState({ id, name, genericName: generic_name, dosage: dosage_amt, frequency, food: with_food })
+  }
+
+  deleteMedication = async() => {
+    const { navigation, setMeds } = this.props;
+    const { id } = this.state
+    try{
+      const meds = await deleteMed(id);
+      await setMeds(meds);
+      navigation.navigate('MedicineCabinet');
+    } catch ({ error }) {
+      this.setState({ error })
+    }
   }
 
   static navigationOptions = {
@@ -58,6 +73,12 @@ export default class MedDetails extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  setMeds: meds => dispatch(setMeds(med))
+})
+
+export default connect(null, mapDispatchToProps)(MedDetails);
 
 const styles = StyleSheet.create({
   container: {

@@ -15,7 +15,6 @@ export const getMeds = async () => {
     throw Error('Unable to retrieve medications. Try again later')
   }
   const meds = await response.json();
-  // const { meds } = data;
   return meds;
 
 }
