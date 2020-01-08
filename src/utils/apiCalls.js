@@ -25,7 +25,12 @@ export const postMed = async (med) => {
   // const options = {
   //   method: 'POST',
   //   body: JSON.stringify({
-  //     // add info
+  //     name: med.name,
+  //     generic_name: med.genericName,
+  //     dosage_amt: med.dosage,
+  //     frequency: med.frequency,
+  //     food: med.food,
+  //     user_id: med.userId
   //   }),
   //   headers: {
   //     'content-type': 'application/json'
@@ -35,9 +40,18 @@ export const postMed = async (med) => {
   // if (!response.ok) {
   //   throw Error('Unable to add medication at this time. Please try again later.')
   // }
-  // const addedMeds = await response.json();
+  // const addedMeds or addedMed??? = await response.json();
 
-  let addedMeds = data.meds.push(med)
+  const newMed = {
+    name: med.name,
+    generic_name: med.genericName,
+    dosage_amt: med.dosage,
+    frequency: med.frequency,
+    food: med.food,
+    user_id: med.userId
+  }
+  
+  let addedMeds = [data.meds, [...newMed]]
   console.log('added in api', addedMeds)
   // return addedMeds;
   return this.getMeds()

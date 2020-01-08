@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-nati
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-// import data from './../../utils/data';
 import { ScrollView } from 'react-native-gesture-handler';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
@@ -40,7 +39,7 @@ export class MedicineCabinet extends Component {
           />
           <View>
           <Text style={styles.name}>{medication.name}</Text>
-          <Text style={styles.genericName}>{medication.genericName}</Text>
+          <Text style={styles.genericName}>{medication.generic_name}</Text>
           </View>
         </TouchableOpacity>
       )

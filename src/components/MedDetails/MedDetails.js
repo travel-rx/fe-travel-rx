@@ -15,14 +15,14 @@ export default class MedDetails extends Component {
       genericName: '',
       dosage: '',
       frequency: 1,
-      withFood: false
+      food: false
     }
   }
 
   componentDidMount() {
     const { medication } = this.props.navigation.state.params;
-    const { id, name, genericName, dosage, frequency, withFood } = medication;
-    this.setState({ id, name, genericName, dosage, frequency, withFood })
+    const { id, name, generic_name, dosage_amt, frequency, food } = medication;
+    this.setState({ id, name, genericName: generic_name, dosage: dosage_amt, frequency, food })
   }
 
   static navigationOptions = {
@@ -39,7 +39,7 @@ export default class MedDetails extends Component {
 
   render() {
     const { navigation } = this.props;
-    const { name, genericName, dosage, frequency, withFood } = this.state;
+    const { name, genericName, dosage, frequency, food } = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.medDetails}>
@@ -47,7 +47,7 @@ export default class MedDetails extends Component {
             <Text style={styles.name}>{name}</Text>
             <Text style= {styles.generic} >{genericName}</Text>
             <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
-            <Text style={styles.text}>{withFood ? 'Take with food' : 'Can take without food'}</Text>
+            <Text style={styles.text}>{food ? 'Take with food' : 'Can take without food'}</Text>
           </View>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Delete Medication</Text>

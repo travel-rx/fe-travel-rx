@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
-import { getMeds, postMed } from '../../utils/apiCalls';
+import { getMeds, postMed, getDrug } from '../../utils/apiCalls';
 import { setMeds } from '../../actions';
 
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -14,16 +14,21 @@ export class AddMed extends Component {
     super();
     this.state = {
       name: '',
+      genericName: '',
       dosage: '',
       frequency: 1,
-      withFood: false,
+      food: false,
+      userId: 1,
       error: ''
     }
   }
 
   addMedication = async (med) => {
     const { setMeds } = this.props;
+    const { name } = this.state;
     try {
+      const genericName = await getDrug(name);
+      await this.setState({ genericName })
       const meds = await postMed(this.state);
       await setMeds(meds);
     } catch ({ error }) {
@@ -75,9 +80,9 @@ export class AddMed extends Component {
               keyboardShouldPersistTaps='always'
             />
             <Picker
-              selectedValue={this.state.withFood}
+              selectedValue={this.state.food}
               style={styles.picker}
-              onValueChange={(itemValue) => this.setState({ withFood: itemValue})}
+              onValueChange={(itemValue) => this.setState({ food: itemValue})}
             >
               <Picker.Item label='Take WITH food' value={false}/>
               <Picker.Item label='Take WITHOUT food' value={true}/>

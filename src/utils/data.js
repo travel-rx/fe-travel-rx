@@ -3,18 +3,20 @@ const data = {
     {
       id: 1,
       name: 'Phenergan',
-      genericName: 'Promethazine',
-      withFood: false,
+      generic_name: 'Promethazine',
+      food: false,
       frequency: 3,
-      dosage: '25mg'
+      dosage_amt: '25mg',
+      user_id: 1
     },
     {
       id: 2,
       name: 'Vibramycin',
-      genericName: 'Doxycycline',
-      withFood: true,
+      generic_name: 'Doxycycline',
+      food: true,
       frequency: 1,
-      dosage: '200mg'
+      dosage_amt: '200mg',
+      user_id: 1
     }
   ]
 }
