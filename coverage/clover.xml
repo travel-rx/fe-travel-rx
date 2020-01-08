@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578525832343" clover="3.2.0">
-  <project timestamp="1578525832343" name="All files">
-    <metrics statements="144" coveredstatements="60" conditionals="26" coveredconditionals="1" methods="48" coveredmethods="14" elements="218" coveredelements="75" complexity="0" loc="144" ncloc="144" packages="9" files="11" classes="11"/>
+<coverage generated="1578526753631" clover="3.2.0">
+  <project timestamp="1578526753631" name="All files">
+    <metrics statements="144" coveredstatements="62" conditionals="26" coveredconditionals="1" methods="48" coveredmethods="15" elements="218" coveredelements="78" complexity="0" loc="144" ncloc="144" packages="9" files="11" classes="11"/>
     <package name="actions">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.js" path="/Users/amyrippeto/Turing/Mod4/fe-travel-rx/src/actions/index.js">
@@ -171,9 +171,9 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="27" coveredstatements="9" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <metrics statements="27" coveredstatements="11" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="apiCalls.js" path="/Users/amyrippeto/Turing/Mod4/fe-travel-rx/src/utils/apiCalls.js">
-        <metrics statements="26" coveredstatements="8" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <metrics statements="26" coveredstatements="10" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -190,14 +190,14 @@
         <line num="18" count="0" type="stmt"/>
         <line num="21" count="4" type="stmt"/>
         <line num="22" count="4" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
         <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="38" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="44" count="4" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
         <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="50" count="0" type="stmt"/>
       </file>
