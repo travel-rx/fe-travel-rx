@@ -43,16 +43,10 @@ export const postMed = async (med) => {
 
 export const deleteMed = async (id) => {
   const options = {
-    method: 'DELETE',
-    header: {
-      'content-type': 'application/json'
-    }
+    method: 'DELETE'
   }
   const response = await fetch(`https://flask-travel-rx.herokuapp.com/api/v1/user/1/medicines/${id}`, options)
   if (!response.ok) {
     throw Error('Unable to delete your medication. Please try again later.')
   }
-  const cleanedMeds = await response.json();
-  return cleanedMeds;
-
 }
