@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     fontSize: RFPercentage(4),
   },
   medicine: {
-    alignItems: 'center',
     flex: 1,
     justifyContent: 'space-between',
     marginBottom: 20,
