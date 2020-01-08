@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-nati
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import data from './../../utils/data';
 import { ScrollView } from 'react-native-gesture-handler';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
@@ -24,8 +23,9 @@ export class MedicineCabinet extends Component {
   };
   
   render() {
-    const { navigation, user } = this.props;
-    const medications = data.meds.map(medication => {
+    const { navigation, meds } = this.props;
+    // console.log('in cabinet', meds)
+    const medications = meds.map(medication => {
       return (
         <TouchableOpacity 
           style={styles.medicine} 
@@ -39,7 +39,7 @@ export class MedicineCabinet extends Component {
           />
           <View>
           <Text style={styles.name}>{medication.name}</Text>
-          <Text style={styles.genericName}>{medication.genericName}</Text>
+          <Text style={styles.genericName}>{medication.generic_name}</Text>
           </View>
         </TouchableOpacity>
       )
@@ -48,8 +48,8 @@ export class MedicineCabinet extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          {user === null && <Text>Please sign in or create an account to view Medicine Cabinet</Text>}
-          {user !== null && medications}
+          {meds.length === 0 && <Text>You do not have any medications in your cabinet yet. Click below to add a medication.</Text>}
+          { medications }
         </ScrollView>
         <TouchableOpacity 
           style={styles.button}
@@ -65,8 +65,8 @@ export class MedicineCabinet extends Component {
   }
 }
 
-export const mapStateToProps = ({ user }) => ({
-  user
+export const mapStateToProps = ({ meds }) => ({
+  meds
 })
 
 export default connect(mapStateToProps)(MedicineCabinet);

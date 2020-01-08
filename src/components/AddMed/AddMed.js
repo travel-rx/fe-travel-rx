@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
+import { connect } from 'react-redux';
+import { postMed, getDrug } from '../../utils/apiCalls';
+import { setMeds } from '../../actions';
+
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
-export default class AddMed extends Component {
+export class AddMed extends Component {
   constructor() {
     super();
     this.state = {
       name: '',
+      genericName: '',
       dosage: '',
-      frequency: 1,
-      withFood: false,
-      inventory: 0
+      frequency: '',
+      food: false,
+      userId: 1,
+      error: ''
+    }
+  }
+
+  addMedication = async () => {
+    const { setMeds, navigation } = this.props;
+    const { name } = this.state;
+    try {
+      const genericName = await getDrug(name);
+      this.setState({ genericName })
+      const meds = await postMed(this.state);
+      await setMeds(meds);
+      navigation.navigate('MedicineCabinet')
+    } catch ({ error }) {
+      this.setState({ error })
     }
   }
 
@@ -56,19 +76,22 @@ export default class AddMed extends Component {
               placeholder='Times taken per day'
               textAlign='center'
               keyboardType={'numeric'}
-              onChange={(frequency) => this.setState({ frequency })}
+              onChangeText={(frequency) => this.setState({ frequency })}
               value={this.state.frequency}
               keyboardShouldPersistTaps='always'
             />
             <Picker
-              selectedValue={this.state.withFood}
+              selectedValue={this.state.food}
               style={styles.picker}
-              onValueChange={(itemValue) => this.setState({ withFood: itemValue})}
+              onValueChange={(itemValue) => this.setState({ food: itemValue})}
             >
               <Picker.Item label='Take WITH food' value={false}/>
               <Picker.Item label='Take WITHOUT food' value={true}/>
             </Picker>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={this.addMedication}
+            >
               <Text style={styles.text}>Save</Text>
             </TouchableOpacity>
           </View>
@@ -78,6 +101,12 @@ export default class AddMed extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  setMeds: meds => dispatch(setMeds(meds))
+})
+
+export default connect(null, mapDispatchToProps)(AddMed);
 
 const styles = StyleSheet.create({
   container: {
