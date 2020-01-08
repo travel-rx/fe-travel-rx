@@ -2,8 +2,10 @@ import data from './data';
 
  export const getDrug = async (drug) => {
    const response = await fetch(`https://flask-travel-rx.herokuapp.com/api/v1/search?drug=${drug}`)
-   if (!response.ok) {
-     throw Error('Unable to get the Generic Name. Please try again later')
+   if (!response.ok && response.status >= 500) {
+     throw Error('Unable to find this medication. Please check the spelling and try again.')
+   } else if (!response.ok && response.status < 500) {
+     throw Error('Looks like a problem with the network. Please try again later.')
    }
   const names = await response.json();
   return names.generic_name
