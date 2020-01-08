@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Dimensions, Keyboard, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { getDrug, getMeds } from '../../utils/apiCalls';
@@ -13,8 +13,7 @@ export class Home extends Component {
     super();
     this.state = {
       medName: '',
-      genericName: 'Enter medication to find generic name',
-      error: ''
+      genericName: 'Enter medication to find generic name'
     }
   };
 
@@ -23,9 +22,26 @@ export class Home extends Component {
     try {
       const meds = await getMeds();
       await setMeds(meds)
-    } catch ({ error }) {
-      this.setState({ error })
+    } catch ({ message }) {
+      console.log(message)
     }
+  }
+  
+  getGeneric = async () => {
+    Keyboard.dismiss();
+    const { medName } = this.state 
+    try {
+      const genericName = await getDrug(medName)
+      this.setState({ genericName })
+    } catch ({ message }){
+      this.errorAlert(message)
+    }
+  }
+
+  errorAlert = (errorMessage) => {
+    Alert.alert (
+      errorMessage
+    )
   }
   
   static navigationOptions = {
@@ -38,19 +54,6 @@ export class Home extends Component {
       fontSize: 30,
     },
   };
-  
-  getGeneric = async () => {
-    Keyboard.dismiss();
-    const { medName } = this.state 
-    
-    try {
-      const genericName = await getDrug(medName)
-      this.setState({ genericName })
-    } catch ({ error }){
-      this.setState({ error })
-    }
-  }
-
   
   render() {
     const { navigation } = this.props;
@@ -65,7 +68,7 @@ export class Home extends Component {
                 textAlign='center'
                 onChangeText={(medName) => this.setState({ medName })}
                 value={this.state.medName}
-                clearButtonMode='always'
+                clearButtonMode='while-editing'
                 keyboardShouldPersistTaps='handled'
               />
               <TouchableOpacity 
@@ -77,21 +80,6 @@ export class Home extends Component {
         </View>
             </ScrollView>
         <Text style={styles.generic}>{this.state.genericName}</Text>
-        {/* {user === null && 
-          <View> 
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => navigation.navigate('Login')}
-            >
-              <Text style={styles.text}>Login</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => navigation.navigate('CreateAccount')}
-            >
-              <Text style={styles.text}>Create Account</Text>
-            </TouchableOpacity>
-          </View>} */}
         <Footer navigation={navigation}/>
       </View>
     );

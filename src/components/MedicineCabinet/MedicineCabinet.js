@@ -47,7 +47,7 @@ export class MedicineCabinet extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          {meds.length === 0 && <Text>You do not have any medications in your cabinet yet. Click below to add a medication.</Text>}
+          {meds.length === 0 && <Text style={styles.noMeds}>You do not have any medications in your cabinet yet. Click below to add a medication.</Text>}
           { medications }
         </ScrollView>
         <TouchableOpacity 
@@ -112,4 +112,10 @@ const styles = StyleSheet.create({
     width: width * .85,
     marginBottom: height * .05
   },
+  noMeds: {
+    fontSize: height * .05,
+    textAlign: 'center',
+    marginTop: height * .06,
+    width: width * .9
+  }
 });

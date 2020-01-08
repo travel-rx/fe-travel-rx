@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions, Alert } from 'react-native';
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
 import { postMed, getDrug } from '../../utils/apiCalls';
 import { setMeds } from '../../actions';
-
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
@@ -18,8 +17,7 @@ export class AddMed extends Component {
       dosage: '',
       frequency: '',
       food: false,
-      userId: 1,
-      error: ''
+      userId: 1
     }
   }
 
@@ -32,8 +30,27 @@ export class AddMed extends Component {
       const meds = await postMed(this.state);
       await setMeds(meds);
       navigation.navigate('MedicineCabinet')
-    } catch ({ error }) {
-      this.setState({ error })
+    } catch ({ message }) {
+      this.errorAlert(message)
+    }
+  }
+
+  errorAlert = (errorMessage) => {
+    Alert.alert(
+      errorMessage
+    )
+  }
+
+  checkInputs = () => {
+    const { name, dosage, frequency } = this.state;
+    if (name === '') {
+      this.errorAlert('Please provide the medication name.')
+    } else if (dosage === '') {
+      this.errorAlert('Please provide a dosage amount. Example: 100mg')
+    } else if (frequency === '') {
+      this.errorAlert('Please provide the number of times this medication is taken daily.')
+    } else {
+      this.addMedication()
     }
   }
 
@@ -90,7 +107,7 @@ export class AddMed extends Component {
             </Picker>
             <TouchableOpacity 
               style={styles.button}
-              onPress={this.addMedication}
+              onPress={this.checkInputs}
             >
               <Text style={styles.text}>Save</Text>
             </TouchableOpacity>

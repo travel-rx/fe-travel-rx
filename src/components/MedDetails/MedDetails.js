@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
+import { deleteMed } from '../../utils/apiCalls';
+import { setMeds } from '../../actions';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { height, width } = Dimensions.get('screen');
 
-export default class MedDetails extends Component {
+export class MedDetails extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,6 +25,40 @@ export default class MedDetails extends Component {
     const { medication } = this.props.navigation.state.params;
     const { id, name, generic_name, dosage_amt, frequency, with_food } = medication;
     this.setState({ id, name, genericName: generic_name, dosage: dosage_amt, frequency, food: with_food })
+  }
+
+  deleteMedication = async() => {
+    const { navigation, setMeds } = this.props;
+    const { id } = this.state;
+    try{
+      const meds = await deleteMed(id);
+      await setMeds(meds);
+      navigation.navigate('MedicineCabinet')
+    } catch ({ message }) {
+      this.errorAlert(message)
+    }
+  }
+
+  errorAlert = (errorMessage) => {
+    Alert.alert (
+      errorMessage
+    )
+  }
+
+  confirmAlert = () => {
+    Alert.alert (
+      'Are you sure?',
+      'Press OK to permanently delete this medication.',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        { 
+          text: 'OK', onPress: () => this.deleteMedication() 
+        }
+      ]
+    )
   }
 
   static navigationOptions = {
@@ -49,7 +85,10 @@ export default class MedDetails extends Component {
             <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
             <Text style={styles.text}>{food ? 'Take with food' : 'Can take without food'}</Text>
           </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={this.confirmAlert}  
+        >
           <Text style={styles.buttonText}>Delete Medication</Text>
         </TouchableOpacity>
         </View>
@@ -58,6 +97,12 @@ export default class MedDetails extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  setMeds: meds => dispatch(setMeds(meds))
+})
+
+export default connect(null, mapDispatchToProps)(MedDetails);
 
 const styles = StyleSheet.create({
   container: {
