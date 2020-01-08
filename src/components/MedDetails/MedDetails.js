@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
-import { deleteMed } from '../../utils/apiCalls';
+import { deleteMed, getMeds } from '../../utils/apiCalls';
 import { setMeds } from '../../actions';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
@@ -31,7 +31,8 @@ export class MedDetails extends Component {
     const { navigation, setMeds } = this.props;
     const { id } = this.state;
     try{
-      const meds = await deleteMed(id);
+      await deleteMed(id);
+      const meds = await getMeds();
       await setMeds(meds);
       navigation.navigate('MedicineCabinet')
     } catch ({ message }) {
