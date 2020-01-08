@@ -48,7 +48,7 @@ export class MedDetails extends Component {
   confirmAlert = () => {
     Alert.alert (
       'Are you sure?',
-      'Press OK to permently delete this medication.',
+      'Press OK to permanently delete this medication.',
       [
         {
           text: 'Cancel',
