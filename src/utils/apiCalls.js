@@ -16,7 +16,6 @@ export const getMeds = async () => {
   // }
   // const meds = await response.json();
   const { meds } = data;
-  // console.log('meds in apiCalls', meds)
   return meds;
 
 }
@@ -28,7 +27,7 @@ export const postMed = async (med) => {
   //     name: med.name,
   //     generic_name: med.genericName,
   //     dosage_amt: med.dosage,
-  //     frequency: med.frequency,
+  //     frequency: parseInt(med.frequency),
   //     food: med.food,
   //     user_id: med.userId
   //   }),
@@ -40,7 +39,7 @@ export const postMed = async (med) => {
   // if (!response.ok) {
   //   throw Error('Unable to add medication at this time. Please try again later.')
   // }
-  // const addedMeds or addedMed??? = await response.json();
+  // const addedMeds = await response.json();
 
   const newMed = {
     name: med.name,
@@ -50,20 +49,19 @@ export const postMed = async (med) => {
     food: med.food,
     user_id: med.userId
   }
-  console.log('new med', newMed)
   let addedMeds = [...data.meds, newMed]
-  console.log('added in api', addedMeds)
-  // return addedMeds;
-  return this.getMeds()
+  return addedMeds;
 }
 
 export const deleteMed = async (id) => {
   const options = {
     method: 'DELETE'
   }
-  const response = await fetch('url', options)
+  const response = await fetch(`url${id}`, options)
   if (!response.ok) {
     throw Error('Unable to delete your medication. Please try again later.')
   }
+  const cleanedMeds = await response.json();
+  return cleanedMeds;
 
 }

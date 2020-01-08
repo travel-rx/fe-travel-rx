@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Picker, Dimensions } from 'react-native';
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
-import { getMeds, postMed, getDrug } from '../../utils/apiCalls';
+import { postMed, getDrug } from '../../utils/apiCalls';
 import { setMeds } from '../../actions';
 
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -16,7 +16,7 @@ export class AddMed extends Component {
       name: '',
       genericName: '',
       dosage: '',
-      frequency: 1,
+      frequency: '',
       food: false,
       userId: 1,
       error: ''
@@ -75,8 +75,8 @@ export class AddMed extends Component {
               placeholder='Times taken per day'
               textAlign='center'
               keyboardType={'numeric'}
-              onChange={(frequency) => this.setState({ frequency })}
-              value={String(this.state.frequency)}
+              onChangeText={(frequency) => this.setState({ frequency })}
+              value={this.state.frequency}
               keyboardShouldPersistTaps='always'
             />
             <Picker
