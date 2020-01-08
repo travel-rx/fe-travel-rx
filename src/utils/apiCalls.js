@@ -16,7 +16,7 @@ export const getMeds = async () => {
   // }
   // const meds = await response.json();
   const { meds } = data;
-  console.log('meds in apiCalls', meds)
+  // console.log('meds in apiCalls', meds)
   return meds;
 
 }
@@ -50,13 +50,12 @@ export const postMed = async (med) => {
     food: med.food,
     user_id: med.userId
   }
-  
-  let addedMeds = [data.meds, [...newMed]]
+  console.log('new med', newMed)
+  let addedMeds = [...data.meds, newMed]
   console.log('added in api', addedMeds)
   // return addedMeds;
   return this.getMeds()
 }
-
 
 export const deleteMed = async (id) => {
   const options = {

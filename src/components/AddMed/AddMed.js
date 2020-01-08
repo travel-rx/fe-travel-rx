@@ -23,12 +23,12 @@ export class AddMed extends Component {
     }
   }
 
-  addMedication = async (med) => {
+  addMedication = async () => {
     const { setMeds } = this.props;
     const { name } = this.state;
     try {
       const genericName = await getDrug(name);
-      await this.setState({ genericName })
+      this.setState({ genericName })
       const meds = await postMed(this.state);
       await setMeds(meds);
     } catch ({ error }) {
@@ -76,7 +76,7 @@ export class AddMed extends Component {
               textAlign='center'
               keyboardType={'numeric'}
               onChange={(frequency) => this.setState({ frequency })}
-              value={this.state.frequency}
+              value={String(this.state.frequency)}
               keyboardShouldPersistTaps='always'
             />
             <Picker
