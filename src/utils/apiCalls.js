@@ -21,48 +21,38 @@ export const getMeds = async () => {
 }
 
 export const postMed = async (med) => {
-  // const options = {
-  //   method: 'POST',
-  //   body: JSON.stringify({
-  //     name: med.name,
-  //     generic_name: med.genericName,
-  //     dosage_amt: med.dosage,
-  //     frequency: parseInt(med.frequency),
-  //     with_food: med.food,
-  //     user_id: med.userId
-  //   }),
-  //   headers: {
-  //     'content-type': 'application/json'
-  //   }
-  // }
-  // const response = await fetch('url', options)
-  // if (!response.ok) {
-  //   throw Error('Unable to add medication at this time. Please try again later.')
-  // }
-  // const addedMeds = await response.json();
-
-  const newMed = {
-    name: med.name,
-    generic_name: med.genericName,
-    dosage_amt: med.dosage,
-    frequency: med.frequency,
-    with_food: med.food,
-    user_id: med.userId
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+      name: med.name,
+      generic_name: med.genericName,
+      dosage_amt: med.dosage,
+      frequency: parseInt(med.frequency),
+      with_food: med.food,
+      user_id: med.userId
+    }),
+    headers: {
+      'content-type': 'application/json'
+    }
   }
-  let addedMeds = [...data.meds, newMed]
+  const response = await fetch('https://flask-travel-rx.herokuapp.com/api/v1/user/1/medicines', options)
+  if (!response.ok) {
+    throw Error('Unable to add medication at this time. Please try again later.')
+  }
+  const addedMeds = await response.json();
   return addedMeds;
 }
 
 export const deleteMed = async (id) => {
-  // const options = {
-  //   method: 'DELETE'
-  // }
-  // const response = await fetch(`url${id}`, options)
+  const options = {
+    method: 'DELETE'
+  }
+  const response = await fetch(`https://flask-travel-rx.herokuapp.com/api/v1/user/1/medicines/${id}`, options)
   // if (!response.ok) {
   //   throw Error('Unable to delete your medication. Please try again later.')
   // }
-  // const cleanedMeds = await response.json();
-  // return cleanedMeds;
-  return data.meds.filter(med => med.id != id)
+  const cleanedMeds = await response.json();
+  return cleanedMeds;
+  // return data.meds.filter(med => med.id != id)
 
 }
