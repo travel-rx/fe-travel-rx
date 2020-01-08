@@ -72,7 +72,7 @@ exports[`EmergencyTranslations should match the snapshot 1`] = `
           }
         }
       >
-        Ayuda
+        Ayudame
       </Text>
       <Text
         style={
