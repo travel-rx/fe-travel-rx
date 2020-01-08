@@ -24,13 +24,14 @@ export class AddMed extends Component {
   }
 
   addMedication = async () => {
-    const { setMeds } = this.props;
+    const { setMeds, navigation } = this.props;
     const { name } = this.state;
     try {
       const genericName = await getDrug(name);
       this.setState({ genericName })
       const meds = await postMed(this.state);
       await setMeds(meds);
+      navigation.navigate('MedicineCabinet')
     } catch ({ error }) {
       this.setState({ error })
     }
