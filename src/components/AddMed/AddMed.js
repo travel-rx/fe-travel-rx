@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     width: width * 0.85,
   },
   addMed: {
-    // marginTop: 30
+    marginTop: 30
   },
   picker: {
     flex: 0,

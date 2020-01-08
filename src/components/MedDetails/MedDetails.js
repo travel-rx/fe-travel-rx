@@ -17,8 +17,7 @@ export class MedDetails extends Component {
       genericName: '',
       dosage: '',
       frequency: 1,
-      food: false,
-      error: ''
+      food: false
     }
   }
 
@@ -35,24 +34,30 @@ export class MedDetails extends Component {
       const meds = await deleteMed(id);
       await setMeds(meds);
       navigation.navigate('MedicineCabinet')
-    } catch ({ error }) {
-      this.setState({ error })
+    } catch ({ message }) {
+      this.errorAlert(message)
     }
   }
 
-  showAlert = () => {
+  errorAlert = (errorMessage) => {
+    Alert.alert (
+      errorMessage
+    )
+  }
+
+  confirmAlert = () => {
     Alert.alert (
       'Are you sure?',
       'Press OK to permently delete this medication.',
       [
         {
           text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
-        { text: 'OK', onPress: () => this.deleteMedication() },
-      ],
-      { cancelable: false },
+        { 
+          text: 'OK', onPress: () => this.deleteMedication() 
+        }
+      ]
     )
   }
 
@@ -82,7 +87,7 @@ export class MedDetails extends Component {
           </View>
         <TouchableOpacity 
           style={styles.button}
-          onPress={this.showAlert}  
+          onPress={this.confirmAlert}  
         >
           <Text style={styles.buttonText}>Delete Medication</Text>
         </TouchableOpacity>
