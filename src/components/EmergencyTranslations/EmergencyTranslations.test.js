@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-native';
 import renderer from 'react-test-renderer';
-import { EmergencyTranslations } from './EmergencyTranslations';
+import EmergencyTranslations from './EmergencyTranslations';
 import { shallow } from 'enzyme';
 
 import { configure } from 'enzyme';
@@ -12,5 +12,9 @@ configure({ adapter: new Adapter() });
 describe('EmergencyTranslations', () => {
   it('should return true', () => {
     expect(true).toEqual(true);
+  });
+
+  it('should match the snapshot', () => {
+    expect(shallow(<EmergencyTranslations />)).toMatchSnapshot()
   })
 })

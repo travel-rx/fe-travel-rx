@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmergencyTranslations should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <Picker
+    mode="dialog"
+    onValueChange={[Function]}
+    selectedValue="spanish"
+    style={
+      Object {
+        "flex": 0,
+        "height": 40.019999999999996,
+        "justifyContent": "space-around",
+        "marginTop": 106.72,
+        "width": 150,
+      }
+    }
+  >
+    <PickerItem
+      label="Spanish"
+      value="spanish"
+    />
+    <PickerItem
+      label="French"
+      value="french"
+    />
+    <PickerItem
+      label="German"
+      value="german"
+    />
+    <PickerItem
+      label="Chinese"
+      value="chinese"
+    />
+    <PickerItem
+      label="Arabic"
+      value="arabic"
+    />
+  </Picker>
+  <ScrollViewMock
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderTopColor": "#3499AA",
+        "borderTopWidth": 2,
+        "marginTop": 93.38000000000001,
+        "width": 675,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 26.68,
+          "marginTop": 40.019999999999996,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3499AA",
+            "fontSize": 67,
+          }
+        }
+      >
+        Ayuda
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 40,
+          }
+        }
+      >
+        "Help"
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 26.68,
+          "marginTop": 40.019999999999996,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3499AA",
+            "fontSize": 67,
+          }
+        }
+      >
+        Necesito un médico
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 40,
+          }
+        }
+      >
+        "I need a doctor"
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 26.68,
+          "marginTop": 40.019999999999996,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3499AA",
+            "fontSize": 67,
+          }
+        }
+      >
+        Ha habido un accidente
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 40,
+          }
+        }
+      >
+        "There's been an accident"
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 26.68,
+          "marginTop": 40.019999999999996,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3499AA",
+            "fontSize": 67,
+          }
+        }
+      >
+        Necesito una ambulancia
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 40,
+          }
+        }
+      >
+        "I need an ambulance"
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 26.68,
+          "marginTop": 40.019999999999996,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3499AA",
+            "fontSize": 67,
+          }
+        }
+      >
+        Medicación
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 40,
+          }
+        }
+      >
+        "Medicine"
+      </Text>
+    </View>
+  </ScrollViewMock>
+  <Footer />
+</View>
+`;
