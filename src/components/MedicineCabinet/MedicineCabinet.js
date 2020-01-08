@@ -31,15 +31,17 @@ export class MedicineCabinet extends Component {
           key={medication.name}
           onPress={() => navigation.navigate('MedDetails', {medication: medication})}
         >
-          <MaterialCommunityIcons
-            color='#3499AA'
-            name='pill'
-            size={50}
-          />
-          <View>
-          <Text style={styles.name}>{medication.name}</Text>
+        <View>
+            <Text style={styles.name}>
+              <MaterialCommunityIcons
+                color='#3499AA'
+                name='pill'
+                size={30}
+              />
+              {medication.name}
+            </Text>
           <Text style={styles.genericName}>{medication.generic_name}</Text>
-          </View>
+        </View>
         </TouchableOpacity>
       )
     })
@@ -83,8 +85,9 @@ const styles = StyleSheet.create({
   },
   medicine: {
     flex: 1,
-    flexDirection: 'row',
-    marginTop: height * .06,
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    marginTop: 25,
     width: width * .9,
   },
   name: {
@@ -96,7 +99,7 @@ const styles = StyleSheet.create({
   genericName: {
     color: '#212B31',
     fontSize: height * .03,
-    marginLeft: width * .02
+    marginLeft: width * .04
   },
   button: {
     backgroundColor: '#3499AA',

@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     justifyContent: 'space-between',
+    marginBottom: 20,
     marginTop: 25,
-    marginBottom: 20
   },
   name: {
     textAlign: 'center',
