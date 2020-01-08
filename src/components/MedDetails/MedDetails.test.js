@@ -15,7 +15,7 @@ describe('MedDetails', () => {
   });
 
   it.skip('should match the snapshots', () => {
-    const mockMeds = {
+    const mockMed = {
       id: 2,
       name: 'Vibramycin',
       generic_name: 'Doxycycline',
@@ -25,6 +25,6 @@ describe('MedDetails', () => {
       user_id: 1
     }
 
-    expect(shallow(<MedDetails medication={mockMeds}/>)).toMatchSnapshot()
+    expect(shallow(<MedDetails medication={mockMed}/>)).toMatchSnapshot()
   });
 })

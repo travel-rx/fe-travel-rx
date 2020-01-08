@@ -10,12 +10,12 @@ import data from './data';
 }
 
 export const getMeds = async () => {
-  //const response = await fetch('')
-  // if (!response.ok) {
-  //   thorw Error('Unable to retrieve medications. Try again later')
-  // }
-  // const meds = await response.json();
-  const { meds } = data;
+  const response = await fetch('https://flask-travel-rx.herokuapp.com/api/v1/user/1/medicines')
+  if (!response.ok) {
+    throw Error('Unable to retrieve medications. Try again later')
+  }
+  const meds = await response.json();
+  // const { meds } = data;
   return meds;
 
 }

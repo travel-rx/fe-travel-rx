@@ -2,6 +2,7 @@ import React from 'react';
 import 'react-native';
 import renderer from 'react-test-renderer';
 import { MedicineCabinet } from './MedicineCabinet';
+import data from './../../utils/data';
 import { shallow } from 'enzyme';
 
 import { configure } from 'enzyme';
@@ -15,6 +16,6 @@ describe('MedicineCabinet', () => {
   });
 
   it('should match snapshot', () => {
-    expect(shallow(<MedicineCabinet />)).toMatchSnapshot()
+    expect(shallow(<MedicineCabinet meds={data.meds}/>)).toMatchSnapshot()
   })
 })
