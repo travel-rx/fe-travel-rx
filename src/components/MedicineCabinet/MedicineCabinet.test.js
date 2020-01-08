@@ -12,5 +12,9 @@ configure({ adapter: new Adapter() });
 describe('MedicineCabinet', () => {
   it('should return true', () => {
     expect(true).toEqual(true);
+  });
+
+  it('should match snapshot', () => {
+    expect(shallow(<MedicineCabinet />)).toMatchSnapshot()
   })
 })

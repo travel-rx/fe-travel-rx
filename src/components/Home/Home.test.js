@@ -11,5 +11,9 @@ configure({ adapter: new Adapter() });
 describe('Home', () => {
   it('should return true', () => {
     expect(true).toEqual(true);
+  });
+
+  it('should match the snapshot', () => {
+    expect(shallow(<Home />)).toMatchSnapshot()
   })
 })

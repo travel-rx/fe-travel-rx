@@ -24,7 +24,7 @@ export class MedicineCabinet extends Component {
   };
   
   render() {
-    const { navigation, user } = this.props;
+    const { navigation } = this.props;
     const medications = data.meds.map(medication => {
       return (
         <TouchableOpacity 
@@ -48,8 +48,7 @@ export class MedicineCabinet extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          {user === null && <Text>Please sign in or create an account to view Medicine Cabinet</Text>}
-          {user !== null && medications}
+          {medications}
         </ScrollView>
         <TouchableOpacity 
           style={styles.button}
