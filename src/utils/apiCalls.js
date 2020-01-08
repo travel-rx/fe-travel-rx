@@ -53,14 +53,15 @@ export const postMed = async (med) => {
 }
 
 export const deleteMed = async (id) => {
-  const options = {
-    method: 'DELETE'
-  }
-  const response = await fetch(`url${id}`, options)
-  if (!response.ok) {
-    throw Error('Unable to delete your medication. Please try again later.')
-  }
-  const cleanedMeds = await response.json();
-  return cleanedMeds;
+  // const options = {
+  //   method: 'DELETE'
+  // }
+  // const response = await fetch(`url${id}`, options)
+  // if (!response.ok) {
+  //   throw Error('Unable to delete your medication. Please try again later.')
+  // }
+  // const cleanedMeds = await response.json();
+  // return cleanedMeds;
+  return data.meds.filter(med => med.id != id)
 
 }

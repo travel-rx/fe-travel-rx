@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Footer from '../Footer/Footer';
 import { deleteMed } from '../../utils/apiCalls';
@@ -30,14 +30,30 @@ export class MedDetails extends Component {
 
   deleteMedication = async() => {
     const { navigation, setMeds } = this.props;
-    const { id } = this.state
+    const { id } = this.state;
     try{
       const meds = await deleteMed(id);
       await setMeds(meds);
-      navigation.navigate('MedicineCabinet');
+      navigation.navigate('MedicineCabinet')
     } catch ({ error }) {
       this.setState({ error })
     }
+  }
+
+  showAlert = () => {
+    Alert.alert (
+      'Are you sure?',
+      'Press OK to permently delete this medication.',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        { text: 'OK', onPress: () => this.deleteMedication() },
+      ],
+      { cancelable: false },
+    )
   }
 
   static navigationOptions = {
@@ -64,7 +80,10 @@ export class MedDetails extends Component {
             <Text style={styles.text}>{dosage} taken {frequency} {frequency === 1 ? 'time' : 'times'} per day</Text>
             <Text style={styles.text}>{food ? 'Take with food' : 'Can take without food'}</Text>
           </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={this.showAlert}  
+        >
           <Text style={styles.buttonText}>Delete Medication</Text>
         </TouchableOpacity>
         </View>
@@ -75,7 +94,7 @@ export class MedDetails extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  setMeds: meds => dispatch(setMeds(med))
+  setMeds: meds => dispatch(setMeds(meds))
 })
 
 export default connect(null, mapDispatchToProps)(MedDetails);
