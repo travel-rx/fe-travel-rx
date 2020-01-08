@@ -13,8 +13,7 @@ export class Home extends Component {
     super();
     this.state = {
       medName: '',
-      genericName: 'Enter medication to find generic name',
-      error: ''
+      genericName: 'Enter medication to find generic name'
     }
   };
 
@@ -25,7 +24,6 @@ export class Home extends Component {
       await setMeds(meds)
     } catch ({ message }) {
       console.log(message)
-      // this.setState({ error: message })
     }
   }
   
@@ -36,13 +34,11 @@ export class Home extends Component {
       const genericName = await getDrug(medName)
       this.setState({ genericName })
     } catch ({ message }){
-      console.log('what is the error??', message)
       this.errorAlert(message)
     }
   }
 
   errorAlert = (errorMessage) => {
-    console.log('error catch??? message??', errorMessage)
     Alert.alert (
       errorMessage
     )
@@ -72,7 +68,7 @@ export class Home extends Component {
                 textAlign='center'
                 onChangeText={(medName) => this.setState({ medName })}
                 value={this.state.medName}
-                clearButtonMode='always'
+                clearButtonMode='while-editing'
                 keyboardShouldPersistTaps='handled'
               />
               <TouchableOpacity 

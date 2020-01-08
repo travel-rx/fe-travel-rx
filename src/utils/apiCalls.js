@@ -18,7 +18,6 @@ export const getMeds = async () => {
   }
   const meds = await response.json();
   return meds;
-
 }
 
 export const postMed = async (med) => {
