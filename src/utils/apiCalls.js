@@ -28,7 +28,7 @@ export const postMed = async (med) => {
   //     generic_name: med.genericName,
   //     dosage_amt: med.dosage,
   //     frequency: parseInt(med.frequency),
-  //     food: med.food,
+  //     with_food: med.food,
   //     user_id: med.userId
   //   }),
   //   headers: {
@@ -46,7 +46,7 @@ export const postMed = async (med) => {
     generic_name: med.genericName,
     dosage_amt: med.dosage,
     frequency: med.frequency,
-    food: med.food,
+    with_food: med.food,
     user_id: med.userId
   }
   let addedMeds = [...data.meds, newMed]

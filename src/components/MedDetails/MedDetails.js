@@ -21,8 +21,8 @@ export default class MedDetails extends Component {
 
   componentDidMount() {
     const { medication } = this.props.navigation.state.params;
-    const { id, name, generic_name, dosage_amt, frequency, food } = medication;
-    this.setState({ id, name, genericName: generic_name, dosage: dosage_amt, frequency, food })
+    const { id, name, generic_name, dosage_amt, frequency, with_food } = medication;
+    this.setState({ id, name, genericName: generic_name, dosage: dosage_amt, frequency, food: with_food })
   }
 
   static navigationOptions = {

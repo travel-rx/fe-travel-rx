@@ -64,7 +64,7 @@ exports[`AddMed should match the snapshot 1`] = `
         allowFontScaling={true}
         keyboardShouldPersistTaps="always"
         keyboardType="numeric"
-        onChange={[Function]}
+        onChangeText={[Function]}
         placeholder="Times taken per day"
         rejectResponderTermination={true}
         style={
@@ -80,7 +80,7 @@ exports[`AddMed should match the snapshot 1`] = `
         }
         textAlign="center"
         underlineColorAndroid="transparent"
-        value={1}
+        value=""
       />
       <Picker
         mode="dialog"
@@ -106,6 +106,7 @@ exports[`AddMed should match the snapshot 1`] = `
       </Picker>
       <TouchableOpacity
         activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
             "backgroundColor": "#3499AA",

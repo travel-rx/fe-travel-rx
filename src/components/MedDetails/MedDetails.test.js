@@ -18,10 +18,11 @@ describe('MedDetails', () => {
     const mockMeds = {
       id: 2,
       name: 'Vibramycin',
-      genericName: 'Doxycycline',
-      dosage: '200mg',
+      generic_name: 'Doxycycline',
+      dosage_amt: '200mg',
       frequency: 2,
-      withFood: true,
+      with_food: true,
+      user_id: 1
     }
 
     expect(shallow(<MedDetails medication={mockMeds}/>)).toMatchSnapshot()

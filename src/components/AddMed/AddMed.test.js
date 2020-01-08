@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-native';
 import renderer from 'react-test-renderer';
-import AddMed from './AddMed';
+import { AddMed } from './AddMed';
 import { shallow } from 'enzyme';
 
 import { configure } from 'enzyme';
