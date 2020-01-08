@@ -24,7 +24,6 @@ export class MedicineCabinet extends Component {
   
   render() {
     const { navigation, meds } = this.props;
-    // console.log('in cabinet', meds)
     const medications = meds.map(medication => {
       return (
         <TouchableOpacity 

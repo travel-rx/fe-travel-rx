@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddMed should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <ScrollViewMock>
+    <View
+      style={
+        Object {
+          "marginTop": 30,
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        keyboardShouldPersistTaps="always"
+        onChangeText={[Function]}
+        placeholder="Medication name"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "#D7D7D7",
+            "borderRadius": 12,
+            "borderWidth": 2,
+            "fontSize": 53,
+            "height": 106.72,
+            "marginTop": 20,
+            "width": 637.5,
+          }
+        }
+        textAlign="center"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <TextInput
+        allowFontScaling={true}
+        keyboardShouldPersistTaps="always"
+        onChangeText={[Function]}
+        placeholder="Dosage"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "#D7D7D7",
+            "borderRadius": 12,
+            "borderWidth": 2,
+            "fontSize": 53,
+            "height": 106.72,
+            "marginTop": 20,
+            "width": 637.5,
+          }
+        }
+        textAlign="center"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <TextInput
+        allowFontScaling={true}
+        keyboardShouldPersistTaps="always"
+        keyboardType="numeric"
+        onChangeText={[Function]}
+        placeholder="Times taken per day"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "#D7D7D7",
+            "borderRadius": 12,
+            "borderWidth": 2,
+            "fontSize": 53,
+            "height": 106.72,
+            "marginTop": 20,
+            "width": 637.5,
+          }
+        }
+        textAlign="center"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Picker
+        mode="dialog"
+        onValueChange={[Function]}
+        selectedValue={false}
+        style={
+          Object {
+            "flex": 0,
+            "height": 75,
+            "justifyContent": "space-around",
+            "marginTop": 50,
+          }
+        }
+      >
+        <PickerItem
+          label="Take WITH food"
+          value={false}
+        />
+        <PickerItem
+          label="Take WITHOUT food"
+          value={true}
+        />
+      </Picker>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3499AA",
+            "borderColor": "white",
+            "borderRadius": 12,
+            "borderWidth": 1,
+            "display": "flex",
+            "fontWeight": "bold",
+            "height": 80.03999999999999,
+            "justifyContent": "center",
+            "marginTop": 75,
+            "overflow": "hidden",
+            "width": 637.5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#EBEBEB",
+              "fontSize": 53.36,
+              "textAlign": "center",
+            }
+          }
+        >
+          Save
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </ScrollViewMock>
+  <Footer />
+</View>
+`;

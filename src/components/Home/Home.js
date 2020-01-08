@@ -6,7 +6,6 @@ import { getDrug, getMeds } from '../../utils/apiCalls';
 import { setMeds } from '../../actions/index';
 import { RFPercentage } from "react-native-responsive-fontsize";
 
-
 const { height, width } = Dimensions.get('screen');
 
 export class Home extends Component {
