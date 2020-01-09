@@ -53,6 +53,18 @@ Open up the camera on your phone to scan QR code
 
 ## Wireframe & Process
 
+<details>
+  <summary>Description</summary>
+</details>
+
+<details>
+  <summary>Vision - Wireframes</summary>
+</details>
+
+<details>
+  <summary>Continued Learning</summary>
+</details>
+
 ## Tech Stack
 
 ![c8150d863e584ed42ccfbdc3f3f1aa3a](https://user-images.githubusercontent.com/48900496/72027736-59d8dd80-323d-11ea-8a96-3887ea5750b1.jpg)
