@@ -1,17 +1,31 @@
 # Travel Rx
 
-Contributors: Jeannie Evans https://github.com/jmevans0211 & Amy Rippeto https://github.com/aripp2
+Contributors: [Jeannie Evans](https://github.com/jmevans0211) & [Amy Rippeto](https://github.com/aripp2)
 
 Link to Backend Repository: https://github.com/travel-rx/flask-travel-rx
 
 
 ## About the App
-
-
+TravelRx is a mobile application that helps track your medication on the go. Additionally, the application comes with a translation feature where the user can translate frequently used emergency phrases in 5 of the most spoken languages, French, Spanish, German, Mandarin, and Arabic.
 
 ![summary-trx](https://user-images.githubusercontent.com/48900496/72025392-3b6ee400-3235-11ea-917f-8a80c1f51175.gif)
 
 ## Directions to Run Application
+
+#### Install [Expo Client](https://expo.io/dashboard/jeannieevans) on your mobile phone.
+
+#### In your terminal: 
+
+Clone this repo: `$ git clone https://github.com/travel-rx/fe-travel-rx.git`
+
+Install expo-cli: `$npm install -g expo-cli`
+
+Install all dependencies: `$npm install`
+
+Start up the app: `$ expo start`
+
+Open up the camera on your phone to scan QR code
+
 
 ## App Preview
 <details>
@@ -41,5 +55,4 @@ Link to Backend Repository: https://github.com/travel-rx/flask-travel-rx
 
 ## Tech Stack
 
-![the-react-native-sdk-for-kinvey-is-now-available_870_450](https://user-images.githubusercontent.com/48900496/72025458-69ecbf00-3235-11ea-8527-61f802163230.png)
-
+![c8150d863e584ed42ccfbdc3f3f1aa3a](https://user-images.githubusercontent.com/48900496/72027736-59d8dd80-323d-11ea-8a96-3887ea5750b1.jpg)
