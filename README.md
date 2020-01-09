@@ -14,7 +14,13 @@
 ##### [Project Management Board](https://github.com/orgs/travel-rx/projects/1)
 
 ## About the App
-TravelRx is a mobile application that helps track your medication on the go. Additionally, the application comes with a translation feature where the user can translate frequently used emergency phrases in 5 of the most spoken languages, French, Spanish, German, Mandarin, and Arabic.
+TravelRx is a traveller’s favorite medication-tracking companion! With TravelRx, you don’t need to worry about getting sick while travelling and needing to find the proper medication on your own, losing your everyday medications, or being able to find medical assistance in an area where you don’t speak the language.
+
+Our app provides a traveller with the ability to look up a medication’s generic name from its American brand name, as pharmacies worldwide use the generic medication name rather than brand names. It also provides you with access to a personalized “medicine cabinet,” where you can store information about the medications you take, including their name (brand and generic), time of day you take the medicine, frequency of dosage, as well as the dosage amount.
+
+Lastly, if you are in an area where Spanish, French, Mandarin, German, or Arabic are spoken, TravelRx provides you with popular emergency medical phrases to assist you in getting the help you need.
+
+TravelRx project was completed in 13 days by a team comprised of two front end and two back end developers. This was our first cross-pollination project where members of the two distinct programs at Turing School of Software and Design worked together to produce one app using an idea pitched by one of the members.
 
 ![summary-trx](https://user-images.githubusercontent.com/48900496/72025392-3b6ee400-3235-11ea-917f-8a80c1f51175.gif)
 
