@@ -71,7 +71,7 @@ Run test suite: `$ npm test`
 
 <details>
   <summary>Description</summary>
-  Throughout the course of this project we took a very collaborative approach. We frequently met, starting with standups, and paired to not only have another set of eyes on the code, but to support each other in our individually learning goals. Initially, we began with wireframing and the vision. With our vision and basic wireframes in mind, we began learning React Native and creating more complex wireframes with the program, inVision Studio. With more knowledge on React Native we began coding and remained flexible with the features present on the application. In the end we were able to sucessfully implement the endpoints created by our backend team as well as create the Emergency Translations feature independently. inVision - Wireframes below for visuals.
+  Throughout the course of this project we took a very collaborative approach. We frequently met, starting with standups, and paired to not only have another set of eyes on the code, but to support each other in our individual learning goals. Initially, we began with wireframing and the vision. With our vision and basic wireframes in mind, we began learning React Native and creating more complex wireframes with the program, inVision Studio. With more knowledge of React Native we began coding and remained flexible with the features present on the application. In the end we were able to sucessfully implement the endpoints created by our backend team as well as create the Emergency Translations feature independently. inVision - Wireframes below for visuals.
 </details>
 
 <details>
@@ -88,3 +88,4 @@ Run test suite: `$ npm test`
 ## Tech Stack
 
 ![c8150d863e584ed42ccfbdc3f3f1aa3a](https://user-images.githubusercontent.com/48900496/72027736-59d8dd80-323d-11ea-8a96-3887ea5750b1.jpg)
+<img width="859" alt="Screen Shot 2020-01-09 at 11 00 40 AM" src="https://user-images.githubusercontent.com/44537724/72092336-57bf5f00-32cf-11ea-81c2-5debeac5da13.png">
