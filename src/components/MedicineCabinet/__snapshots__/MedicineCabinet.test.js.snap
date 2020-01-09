@@ -18,18 +18,13 @@ exports[`MedicineCabinet should match snapshot 1`] = `
       style={
         Object {
           "flex": 1,
-          "flexDirection": "row",
-          "marginTop": 80.03999999999999,
+          "justifyContent": "space-between",
+          "marginBottom": 20,
+          "marginTop": 25,
           "width": 675,
         }
       }
     >
-      <Icon
-        allowFontScaling={false}
-        color="#3499AA"
-        name="pill"
-        size={50}
-      />
       <View>
         <Text
           style={
@@ -41,6 +36,12 @@ exports[`MedicineCabinet should match snapshot 1`] = `
             }
           }
         >
+          <Icon
+            allowFontScaling={false}
+            color="#3499AA"
+            name="pill"
+            size={30}
+          />
           Phenergan
         </Text>
         <Text
@@ -48,7 +49,7 @@ exports[`MedicineCabinet should match snapshot 1`] = `
             Object {
               "color": "#212B31",
               "fontSize": 40.019999999999996,
-              "marginLeft": 15,
+              "marginLeft": 30,
             }
           }
         >
@@ -63,18 +64,13 @@ exports[`MedicineCabinet should match snapshot 1`] = `
       style={
         Object {
           "flex": 1,
-          "flexDirection": "row",
-          "marginTop": 80.03999999999999,
+          "justifyContent": "space-between",
+          "marginBottom": 20,
+          "marginTop": 25,
           "width": 675,
         }
       }
     >
-      <Icon
-        allowFontScaling={false}
-        color="#3499AA"
-        name="pill"
-        size={50}
-      />
       <View>
         <Text
           style={
@@ -86,6 +82,12 @@ exports[`MedicineCabinet should match snapshot 1`] = `
             }
           }
         >
+          <Icon
+            allowFontScaling={false}
+            color="#3499AA"
+            name="pill"
+            size={30}
+          />
           Vibramycin
         </Text>
         <Text
@@ -93,7 +95,7 @@ exports[`MedicineCabinet should match snapshot 1`] = `
             Object {
               "color": "#212B31",
               "fontSize": 40.019999999999996,
-              "marginLeft": 15,
+              "marginLeft": 30,
             }
           }
         >
