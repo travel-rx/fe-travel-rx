@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578527613109" clover="3.2.0">
-  <project timestamp="1578527613109" name="All files">
+<coverage generated="1578541153042" clover="3.2.0">
+  <project timestamp="1578541153042" name="All files">
     <metrics statements="144" coveredstatements="62" conditionals="26" coveredconditionals="1" methods="48" coveredmethods="15" elements="218" coveredelements="78" complexity="0" loc="144" ncloc="144" packages="9" files="11" classes="11"/>
     <package name="actions">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -13,10 +13,10 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="About.js" path="/Users/amyrippeto/Turing/Mod4/fe-travel-rx/src/components/About/About.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.AddMed">
