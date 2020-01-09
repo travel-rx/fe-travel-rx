@@ -59,6 +59,15 @@ Open up the camera on your phone to scan QR code
 
 <details>
   <summary>Vision - Wireframes</summary>
+  
+  ![IMG_2702](https://user-images.githubusercontent.com/48900496/72034912-9d3e4680-3253-11ea-9f59-7d0ad75dc18f.PNG)
+  
+  ![IMG_2701](https://user-images.githubusercontent.com/48900496/72034910-9ca5b000-3253-11ea-830b-4fee80c9d5c4.PNG)
+  
+  ![IMG_2703](https://user-images.githubusercontent.com/48900496/72034913-9d3e4680-3253-11ea-9886-01c85645a3a3.PNG)
+  
+  ![IMG_2700](https://user-images.githubusercontent.com/48900496/72034908-9ca5b000-3253-11ea-9ca4-320ce6d3330a.PNG)
+  
 </details>
 
 <details>
