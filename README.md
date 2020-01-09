@@ -15,10 +15,27 @@ Link to Backend Repository: https://github.com/travel-rx/flask-travel-rx
 
 ## App Preview
 <details>
-<summary>Search for Medication</summary>
+<summary>Search for Generic Medication Name</summary>
+  ![trx-find-generic](https://user-images.githubusercontent.com/48900496/72026035-5b9fa280-3237-11ea-88e6-0bd18a376d34.gif)
 
-HI AMY!
 </details>
+
+<details>
+<summary>Add a Medication</summary>
+![trx-PLEASEWORK](https://user-images.githubusercontent.com/48900496/72026501-e208b400-3238-11ea-954f-cd89a7f13ae4.gif)
+</details>
+
+<details>
+<summary>Delete a Medication</summary>
+  ![trx-delete-medication](https://user-images.githubusercontent.com/48900496/72025983-2e52f480-3237-11ea-97a1-e0a3fc46e2e6.gif)
+</details>
+
+<details>
+<summary>Translate Emergency Phrases</summary>
+![trx-new-translate](https://user-images.githubusercontent.com/48900496/72026251-17f96880-3238-11ea-84cc-ad8c91a4df98.gif)
+</details>
+
+
 
 ## Wireframe & Process
 
