@@ -23,7 +23,6 @@ export class Home extends Component {
       const meds = await getMeds();
       await setMeds(meds)
     } catch ({ message }) {
-      console.log(message)
     }
   }
   
