@@ -34,6 +34,11 @@ export default class About extends Component {
           <Text style={styles.text}>
             Lastly, if you are in an area where Spanish, French, Mandarin, German, or Arabic are spoken, TravelRx provides you with popular emergency medical phrases to assist you in getting the help you need.
           </Text>
+          <Text style={styles.by}>Created By:</Text>
+          <Text style={styles.creator}>Smitha Hosmani</Text>
+          <Text style={styles.creator}>Leiya Kenney</Text>
+          <Text style={styles.creator}>Jeannie Evans</Text>
+          <Text style={styles.creator}>Amy Rippeto</Text>
         </ScrollView>
         <Footer navigation={navigation}/>
       </View>
@@ -52,9 +57,18 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#212b31',
-    fontSize: 18,
+    fontSize: 20,
     margin: 10,
     textAlign: 'center',
-    marginBottom: 10
+    marginBottom: 10,
+  },
+  by: {
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  creator: {
+    fontSize: 16,
+    textAlign: 'center',
   }
 });
