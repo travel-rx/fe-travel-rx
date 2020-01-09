@@ -9,8 +9,9 @@
 [Leiya Kenney](https://github.com/leiyakenney)
 [Smitha Hosmani](https://github.com/hsmitha26)
 
-Link to Backend Repository: https://github.com/travel-rx/flask-travel-rx
+##### [Backend Repository](https://github.com/travel-rx/flask-travel-rx)
 
+##### [Project Management Board](https://github.com/orgs/travel-rx/projects/1)
 
 ## About the App
 TravelRx is a mobile application that helps track your medication on the go. Additionally, the application comes with a translation feature where the user can translate frequently used emergency phrases in 5 of the most spoken languages, French, Spanish, German, Mandarin, and Arabic.
