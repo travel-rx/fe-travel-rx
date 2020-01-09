@@ -30,7 +30,8 @@ describe('getDrug', () => {
   it('should throw and error if the resonse is not ok', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        ok: false
+        ok: false,
+        status: 500
       })
     });
 
@@ -39,7 +40,10 @@ describe('getDrug', () => {
 
   it('should throw an error if the server is down', () => {
     window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.reject(Error('Looks like a problem with the network. Please try again later.'))
+      return Promise.resolve({
+        ok: false,
+        status: 400
+      })
     });
 
     expect(getDrug()).rejects.toEqual(Error('Looks like a problem with the network. Please try again later.'));
@@ -164,7 +168,9 @@ describe('postMed', () => {
 describe('deleteMed', () => {
   const id = 1;
   beforeEach(() => {
-    window.fetch = jest.fn().mockImplementation(() => {
+    mockFetch = jest.fn()
+    global.fetch = mockFetch;
+    mockFetch.mockImplementation(() => {
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve()
@@ -172,27 +178,27 @@ describe('deleteMed', () => {
     })
   });
 
-  it('should call deleteMed with the correct url and options', () => {
-    deleteMed(id)
-    expect(window.fetch).toHaveBeenCalledWith(`https://flask-travel-rx.herokuapp.com/api/v1/user/1/medicines/${id}`, { method: 'DELETE'});
+  it('should call deleteMed with the correct url and options', async () => {
+    await deleteMed(id)
+    expect(mockFetch).toHaveBeenCalledWith(`https://flask-travel-rx.herokuapp.com/api/v1/user/1/medicines/${id}`, { method: 'DELETE'});
   });
 
-  it('should throw and error if the repsonse is not ok', () => {
-    window.fetch = jest.fn().mockImplementation(() => {
+  it('should throw and error if the repsonse is not ok', async () => {
+    mockFetch.mockImplementation(() => {
       return Promise.resolve({
         ok: false
       })
     });
 
-    expect(deleteMed(id)).rejects.toEqual(Error('Unable to delete your medication. Please try again later.'));
+    await expect(deleteMed(id)).rejects.toEqual(Error('Unable to delete your medication. Please try again later.'));
   });
 
-  it('should throw an error if the server is down', () => {
-    window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.reject(Error('fetch failed.'))
+  it('should throw an error if the server is down', async () => {
+    mockFetch.mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
     });
 
-    expect(deleteMed(id)).rejects.toEqual(Error('fetch failed'));
+    await expect(deleteMed(id)).rejects.toEqual(Error('fetch failed'));
   });
 
 })
