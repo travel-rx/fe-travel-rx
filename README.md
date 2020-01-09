@@ -55,6 +55,7 @@ Open up the camera on your phone to scan QR code
 
 <details>
   <summary>Description</summary>
+  In summation, we took an extremely collaborative approach. Initially, we began with wireframing and the vision. With our vision and basic wireframes in mind, we began learning React Native and creating more complex wireframes with the program, Invision Studio. With more knowledge on React Native we began coding and remained flexible with the features present on the application. In the end we were able to sucessfully implement the endpoints created by our backend team as well as create the Emergency Translations feature independently. Visin - Wireframes below for visuals.
 </details>
 
 <details>
@@ -68,10 +69,6 @@ Open up the camera on your phone to scan QR code
   
   ![IMG_2700](https://user-images.githubusercontent.com/48900496/72034908-9ca5b000-3253-11ea-9ca4-320ce6d3330a.PNG)
   
-</details>
-
-<details>
-  <summary>Continued Learning</summary>
 </details>
 
 ## Tech Stack
