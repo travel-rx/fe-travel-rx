@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Footer from '../Footer/Footer';
 
-
 export default class About extends Component {
 
   static navigationOptions = {
@@ -24,14 +23,22 @@ export default class About extends Component {
       <View style={styles.container}>
         <ScrollView style={styles.textContainer}>
           <Text style={styles.text}>
-            Havana brown. Egyptian mau american shorthair. Scottish fold. Kitten grimalkin so puma malkin maine coon. Manx. Munchkin leopard savannah, yet tom, or egyptian mau persian. Tom kitten so cougar. Cougar abyssinian , so ocicat yet cornish rex yet ragdoll and tom british shorthair. Birman jaguar ocelot and tomcat.
+            TravelRx is a traveller’s favorite medication-tracking companion! With TravelRx, you don’t need to worry about getting sick while travelling and needing to find the proper medication on your own, losing your everyday medications, or being able to find medical assistance in an area where you don’t speak the language. 
           </Text>
           <Text style={styles.text}>
-            Balinese siamese. Norwegian forest balinese savannah yet himalayan british shorthair leopard bengal. Abyssinian . Ocelot grimalkin so lynx. Tiger devonshire rex, for persian so balinese so kitten, leopard. Cougar ocelot yet singapura. Scottish fold savannah munchkin yet turkish angora tabby or balinese singapura. 
+            Our app provides a traveller with the ability to look up a medication’s generic name from its American brand name, as pharmacies worldwide use the generic medication name rather than brand names. 
           </Text>
           <Text style={styles.text}>
-            Devonshire rex singapura grimalkin. Malkin malkin or cornish rex. Grimalkin sphynx ragdoll or devonshire rex yet tomcat but birman for mouser. British shorthair tiger. Bobcat egyptian mau. Norwegian forest british shorthair but cougar ragdoll leopard, savannah russian blue.
+            It also provides you with access to a personalized “medicine cabinet,” where you can store information about the medications you take, including their name (brand and generic), time of day you take the medicine, frequency of dosage, as well as the dosage amount.
           </Text>
+          <Text style={styles.text}>
+            Lastly, if you are in an area where Spanish, French, Mandarin, German, or Arabic are spoken, TravelRx provides you with popular emergency medical phrases to assist you in getting the help you need.
+          </Text>
+          <Text style={styles.by}>Created By:</Text>
+          <Text style={styles.creator}>Smitha Hosmani</Text>
+          <Text style={styles.creator}>Leiya Kenney</Text>
+          <Text style={styles.creator}>Jeannie Evans</Text>
+          <Text style={styles.creator}>Amy Rippeto</Text>
         </ScrollView>
         <Footer navigation={navigation}/>
       </View>
@@ -50,8 +57,18 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#212b31',
-    fontSize: 18,
+    fontSize: 20,
     margin: 10,
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  by: {
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  creator: {
+    fontSize: 16,
     textAlign: 'center',
   }
 });

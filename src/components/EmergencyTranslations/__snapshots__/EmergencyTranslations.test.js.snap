@@ -37,7 +37,7 @@ exports[`EmergencyTranslations should match the snapshot 1`] = `
       value="german"
     />
     <PickerItem
-      label="Chinese"
+      label="Mandarin"
       value="chinese"
     />
     <PickerItem
