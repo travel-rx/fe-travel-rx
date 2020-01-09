@@ -1,6 +1,13 @@
 # Travel Rx
 
-Contributors: [Jeannie Evans](https://github.com/jmevans0211) & [Amy Rippeto](https://github.com/aripp2)
+## Contributors
+#### Frontend Engineers
+[Amy Rippeto](https://github.com/aripp2)
+[Jeannie Evans](https://github.com/jmevans0211)
+
+#### Backend Engineers
+[Leiya Kenney](https://github.com/leiyakenney)
+[Smitha Hosmani](https://github.com/hsmitha26)
 
 Link to Backend Repository: https://github.com/travel-rx/flask-travel-rx
 
@@ -18,13 +25,15 @@ TravelRx is a mobile application that helps track your medication on the go. Add
 
 Clone this repo: `$ git clone https://github.com/travel-rx/fe-travel-rx.git`
 
-Install expo-cli: `$npm install -g expo-cli`
+Install expo-cli: `$ npm install -g expo-cli`
 
-Install all dependencies: `$npm install`
+Install all dependencies: `$ npm install`
 
 Start up the app: `$ expo start`
 
 Open up the camera on your phone to scan QR code
+
+Run test suite: `$ npm test`
 
 
 ## App Preview
@@ -55,7 +64,7 @@ Open up the camera on your phone to scan QR code
 
 <details>
   <summary>Description</summary>
-  Throughout the course of this project we took a very collaborative approach. We frequently met, starting with standups, and paired to not only have another set of eyes on the code, but to support each other in our individually learning goals. Initially, we began with wireframing and the vision. With our vision and basic wireframes in mind, we began learning React Native and creating more complex wireframes with the program, Invision Studio. With more knowledge on React Native we began coding and remained flexible with the features present on the application. In the end we were able to sucessfully implement the endpoints created by our backend team as well as create the Emergency Translations feature independently. Visin - Wireframes below for visuals.
+  Throughout the course of this project we took a very collaborative approach. We frequently met, starting with standups, and paired to not only have another set of eyes on the code, but to support each other in our individually learning goals. Initially, we began with wireframing and the vision. With our vision and basic wireframes in mind, we began learning React Native and creating more complex wireframes with the program, inVision Studio. With more knowledge on React Native we began coding and remained flexible with the features present on the application. In the end we were able to sucessfully implement the endpoints created by our backend team as well as create the Emergency Translations feature independently. inVision - Wireframes below for visuals.
 </details>
 
 <details>
@@ -65,9 +74,7 @@ Open up the camera on your phone to scan QR code
   
   ![IMG_2701](https://user-images.githubusercontent.com/48900496/72034910-9ca5b000-3253-11ea-830b-4fee80c9d5c4.PNG)
   
-  ![IMG_2703](https://user-images.githubusercontent.com/48900496/72034913-9d3e4680-3253-11ea-9886-01c85645a3a3.PNG)
-  
-  ![IMG_2700](https://user-images.githubusercontent.com/48900496/72034908-9ca5b000-3253-11ea-9ca4-320ce6d3330a.PNG)
+  <img width="874" alt="Screen Shot 2020-01-08 at 12 09 53 AM" src="https://user-images.githubusercontent.com/44537724/72040643-6d4c6e80-3266-11ea-9dc2-e1587aae9fbe.png">
   
 </details>
 
