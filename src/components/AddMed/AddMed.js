@@ -102,8 +102,8 @@ export class AddMed extends Component {
               style={styles.picker}
               onValueChange={(itemValue) => this.setState({ food: itemValue})}
             >
-              <Picker.Item label='Take WITH food' value={false}/>
-              <Picker.Item label='Take WITHOUT food' value={true}/>
+              <Picker.Item label='Take WITH food' value={true}/>
+              <Picker.Item label='Take WITHOUT food' value={false}/>
             </Picker>
             <TouchableOpacity 
               style={styles.button}
