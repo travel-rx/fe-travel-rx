@@ -1,17 +1,23 @@
 # Travel Rx
 
-## Contributors
+### Contributors:
 #### Frontend Engineers
 [Amy Rippeto](https://github.com/aripp2)
+
 [Jeannie Evans](https://github.com/jmevans0211)
 
 #### Backend Engineers
 [Leiya Kenney](https://github.com/leiyakenney)
+
 [Smitha Hosmani](https://github.com/hsmitha26)
 
-### [Backend Repository](https://github.com/travel-rx/flask-travel-rx)
+***
 
-### [Project Management Board](https://github.com/orgs/travel-rx/projects/1)
+#### [Backend Repository](https://github.com/travel-rx/flask-travel-rx)
+
+#### [Project Management Board](https://github.com/orgs/travel-rx/projects/1)
+
+***
 
 ## About the App
 TravelRx is a traveller’s favorite medication-tracking companion! With TravelRx, you don’t need to worry about getting sick while travelling and needing to find the proper medication on your own, losing your everyday medications, or being able to find medical assistance in an area where you don’t speak the language.
