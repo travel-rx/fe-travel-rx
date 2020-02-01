@@ -16,7 +16,7 @@
 ## About the App
 TravelRx is a traveler’s favorite medication-tracking companion! With TravelRx, you don’t need to worry about getting sick while travelling and needing to find the proper medication on your own, losing your everyday medications, or being able to find medical assistance in an area where you don’t speak the language.
 
-Our app provides a traveller with the ability to look up a medication’s generic name from its American brand name, as pharmacies worldwide use the generic medication name rather than brand names. It also provides you with access to a personalized “medicine cabinet,” where you can store information about the medications you take, including their name (brand and generic), time of day you take the medicine, frequency of dosage, as well as the dosage amount.
+Our app provides a traveler with the ability to look up a medication’s generic name from its American brand name, as pharmacies worldwide use the generic medication name rather than brand names. It also provides you with access to a personalized “medicine cabinet,” where you can store information about the medications you take, including their name (brand and generic), time of day you take the medicine, frequency of dosage, as well as the dosage amount.
 
 Lastly, if you are in an area where Spanish, French, Mandarin, German, or Arabic are spoken, TravelRx provides you with popular emergency medical phrases to assist you in getting the help you need.
 
