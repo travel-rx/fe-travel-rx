@@ -26,7 +26,7 @@ Our app provides a traveller with the ability to look up a medication’s generi
 
 Lastly, if you are in an area where Spanish, French, Mandarin, German, or Arabic are spoken, TravelRx provides you with popular emergency medical phrases to assist you in getting the help you need.
 
-TravelRx project was completed in 13 days by a team comprised of two front end and two back end developers. This was our first cross-pollination project where members of the two distinct programs at Turing School of Software and Design worked together to produce one app using an idea pitched by one of the members.
+TravelRx project was completed in 13 days by a team comprised of two front end and two back end developers. All developers worked together to produce one app using an idea pitched by one of the members.
 
 ![summary-trx](https://user-images.githubusercontent.com/48900496/72025392-3b6ee400-3235-11ea-917f-8a80c1f51175.gif)
 
