@@ -1,21 +1,15 @@
 # Travel Rx
 
-### Contributors:
-#### Frontend Engineers
-[Amy Rippeto](https://github.com/aripp2)
+### Contributors
+#### Frontend Engineers: [Amy Rippeto](https://github.com/aripp2) & [Jeannie Evans](https://github.com/jmevans0211)
 
-[Jeannie Evans](https://github.com/jmevans0211)
-
-#### Backend Engineers
-[Leiya Kenney](https://github.com/leiyakenney)
-
-[Smitha Hosmani](https://github.com/hsmitha26)
+#### Backend Engineers: [Leiya Kenney](https://github.com/leiyakenney) & [Smitha Hosmani](https://github.com/hsmitha26)
 
 ***
 
-#### [Backend Repository](https://github.com/travel-rx/flask-travel-rx)
+### [Backend Repository](https://github.com/travel-rx/flask-travel-rx)
 
-#### [Project Management Board](https://github.com/orgs/travel-rx/projects/1)
+### [Project Management Board](https://github.com/orgs/travel-rx/projects/1)
 
 ***
 
